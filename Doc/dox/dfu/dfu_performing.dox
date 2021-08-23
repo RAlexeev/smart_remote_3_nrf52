@@ -1,0 +1,124 @@
+/**
+@page dfu_performing Running a DFU
+
+The update procedure presented in this section uses the precompiled firmware packages delivered with Smart Remote. However, the DFU process looks exactly the same if you were to use your own firmware packages.
+
+@section dfu_performing_intro Introduction
+
+Smart Remote comes with precompiled firmware packages which you can use to test the DFU process. You can find them in the <tt>Precompiled Firmware</tt> folder:
+- <tt>PCA20023-SR3_nRF52832_Product_Example_DFU_Package</tt> - Precompiled firmware package for the product example based on nRF52832.
+- <tt>PCA63519-SR3_nRF52832_Shield_DFU_Package</tt> - Precompiled firmware package for the Smart Remote DK add-on.
+- <tt>PCA20031-SR3_nRF52810_Product_Example_DFU_Package</tt> - Precompiled firmware package for the product example based on nRF52810.
+
+These packages are fully functional and do not require you to generate new keys, bootloader, or bootloader settings, as long as you use the provided precompiled firmware.
+If you want to run a DFU on your own application, you need to create your own DFU ZIP package, keys, and bootloader. See @ref dfu_generating.
+
+There are two ways to run a DFU: using a desktop or a mobile device. The procedure is the same for the product example and for the DK add-on.
+
+@section dfu_performing_desktop Performing the upgrade with nRF Connect (desktop)
+
+Install the following software on your desktop computer before running this procedure:
+- <a href="https://www.nordicsemi.com/eng/Products/Bluetooth-low-energy/nRF-Connect-for-desktop" target="blank">nRF Connect for desktop</a>
+
+You will also need either an nRF51 or an nRF52 DK board that will function as a connectivity board during DFU.
+
+-# Power on the device that is being updated. Make sure your Smart Remote is programmed with an appropriate firmware HEX file. See @ref firmware_config.
+-# Connect another DK to your computer through the USB port. This DK will serve as an intermediate connectivity board. You can use either an nRF51 or an nRF52 DK for this purpose. It is recommended to erase this board prior to using it for DFU.
+-# Run nRF Connect. From the list of ports, choose the serial port on which the connectivity board is connected.<br>
+	@image html NRFConnect_Desktop01_SelectCOM.png
+<br>
+-# If the board was erased before, a message appears saying that no connectivity firmware was detected. Agree to automatically update the connectivity firmware.<br>
+	@image html NRFConnect_Desktop00_ConnectivityFW.png
+<br>
+-# Click <b>Start Scan</b>. From the available discovered devices, connect to <tt>Smart Remote 3</tt>. Make sure it is not bonded to another host.<br>
+	@image html NRFConnect_Desktop02_Scan.png
+<br>
+	@note The list of discovered devices is not automatically refreshed when they stop advertising. Whenever you have problems connecting to a device from the list, try clearing the list and rerunning the scan. If Smart Remote stops advertising, tap or move the device to wake it up from low power mode.
+<br>
+-# Open pairing settings for the newly connected device. <br>
+	@image html NRFConnect_Desktop03_Connected.png
+<br>
+-# When pairing, make sure to check the <b>Perform bonding</b> option. <br>
+	@image html NRFConnect_Desktop04_Bond.png
+<br>
+-# When the device is bonded, close the window. <br>
+	@image html NRFConnect_Desktop05_Bonded.png
+<br>
+-# Click the DFU icon in nRF Connect. <br>
+	@image html NRFConnect_Desktop06_DFUInit.png
+<br>
+-# Select the package to be transmitted to your device. <br>
+	@image html NRFConnect_Desktop07_DFUChooseFile.png
+<br>
+-# After selecting the package, click <b>Start DFU</b>. <br>
+	@image html NRFConnect_Desktop08_DFUStart.png
+<br>
+-# Smart Remote device reboots to the bootloader and enters DFU mode. nRF Connect disconnects and automatically reconnects to the device using the same bonding information.
+-# The DFU package is now uploaded to Smart Remote.<br>
+    @note For packages containing a complete firmware (a package with the SoftDevice, bootloader, and application), this is a two-stage process, in which the SoftDevice and the bootloader are updated first, followed by the application.
+<br>
+-# Progress can be observed on the graph. <br>
+	@image html NRFConnect_Desktop09_DFUTransfer.png
+<br>
+-# Wait until the DFU process is completed. <br>
+	@image html NRFConnect_Desktop10_DFUTransferDone.png
+<br>
+-# When the package upload is completed, the device reboots. In a two-stage process, the device re-enters the bootloader
+   to continue upload of the second part of the DFU package. <br>
+	@image html NRFConnect_Desktop11_DFUSecondStage.png
+<br>
+-# After the DFU process is finished, the device reboots back to the application. <br>
+	@image html NRFConnect_Desktop12_DFUCompleted.png
+<br>
+@section dfu_performing_mobile Performing the upgrade (mobile)
+
+Install the following software on your mobile device before running this procedure:
+- <a href="https://www.nordicsemi.com/eng/Products/Nordic-mobile-Apps/nRF-Connect-for-mobile-previously-called-nRF-Master-Control-Panel" target="blank">nRF Connect for Mobile</a>
+
+-# Transfer the ZIP packages that will be used for DFU to your mobile device.
+-# Power on the product example or the DK add-on. Make sure your Smart Remote is programmed with an appropriate HEX file. See @ref firmware_config.
+-# Open nRF Connect on your mobile device.
+-# Tap Scan and find <tt>Smart Remote 3</tt> on the discovered devices list.
+-# Connect to the Smart Remote device. <br>
+	@image html NRFConnect_Android01_Connect.png
+<br>
+-# Open the settings and bond with the device. <br>
+	@image html NRFConnect_Android02_Bond.png
+<br>
+-# Tap <b>Bond</b> to bond with the device. <br>
+	@image html NRFConnect_Android03_BondClick.png
+<br>
+	@note The list of discovered devices is not automatically refreshed when they stop advertising. Whenever you have problems connecting to a device from the list, try refreshing the list. If Smart Remote stops advertising, tap or move the device.
+<br>
+-# To start the DFU process, tap the DFU icon. <br>
+	@image html NRFConnect_Android04_DfuInit.png
+<br>
+-# Select <b>Distribution packet (ZIP)</b> and navigate to the ZIP package that you have previously uploaded to your mobile device. <br>
+	@image html NRFConnect_Android05_DfuChooseFile.png
+<br>
+-# Smart Remote reboots to the bootloader. <br>
+	@image html NRFConnect_Android06_DfuEnterBootloader.png
+<br>
+-# The host reconnects to the device using the same bonding information. <br>
+	@image html NRFConnect_Android07_DfuStart1.png
+<br>
+-# The DFU package is now uploaded to Smart Remote. <br>
+    @note For packages containing a complete firmware (a package with SoftDevice, bootloader, and application), this is a two-stage process in which the SoftDevice and the bootloader are updated first, followed by the application. The Android version of nRF Connect performs DFU process in the background service. For information on the current stage and progress of the DFU, check the Android status bar.
+<br>
+-# Progress can be observed on the graph. <br>
+	@image html NRFConnect_Android08_DfuProgress1.png
+<br>
+-# Alternatively, progress can be observed on the Android status bar. <br>
+	@image html NRFConnect_Android09_DfuProgress1b.png
+<br>
+-# When package upload is completed, the device reboots. In a two-stage process, the device re-enters the bootloader
+   to continue upload of the second part of the DFU package. <br>
+	@image html NRFConnect_Android10_DfuDisconnecting.png
+<br>
+-# Progress can be observed as before. Note that information about the package part being currently uploaded is provided. <br>
+	@image html NRFConnect_Android12_DfuProgress2.png
+<br>
+-# After the DFU process is finished, the device reboots back to the application. Refresh the services if needed. <br>
+	@image html NRFConnect_Android14_RefreshServices.png
+<br>
+*/

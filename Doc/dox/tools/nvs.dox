@@ -1,0 +1,38 @@
+/**
+@page nvs Nordic Voice System
+
+Nordic Voice System (NVS) is a set of components allowing to receive audio streams transmitted by the nRFready Smart Remote reference designs
+(nRFready Smart Remote 2, nRFready Smart Remote 3 for nRF51, and nRFready Smart Remote 3 for nRF52). NVS is tailored for the Ubuntu LTS 16.04 platform,
+enabling easy development and testing of the Smart Remote solution. However, its design allows for smooth porting to different environments.
+
+This section provides an overview of NVS, as well as describes the principles of audio transmissions using the Smart Remote reference design.
+
+@section VoHoG Voice over HID over GATT
+
+The Smart Remote reference design traditionally uses Voice over HID over GATT (VoHoG) service for audio data transmission.
+The VoHoG service consists of two vendor-defined reports attached to the HID service already provided by the remote. There is one input report, which is used
+for audio data, as well as one output report acting as a control channel.
+
+When audio streaming is started by sending an appropriate command (output report), the compressed audio data is sent over HID as vendor-defined reports.
+Format of the data is defined separately for each codec (and, in some cases, by its settings). However, the general principle is the same for all configurations: a large audio frame (dozens or hundreds of bytes)
+is divided into smaller reports, which are sent one by one and reassembled on the host side. If the link MTU is big enough and/or the audio frame is small, then a single audio frame can be sent using only one report.
+
+@section nvs_for_linux NVS for Linux
+
+NVS converts the received HID reports into an audio stream, performing audio frame reassembly, as well as decompression.
+These tasks are performed by a dedicated library, libnvs, which is the core component of NVS.
+
+The libnvs library uses the hidraw interface (provided by Linux Kernel for every HID-compatible device registered in the system) to access the HID reports sent by the remote.
+Then, libnvs reads the HID report descriptor and selects the appropriate codec. When an audio stream is requested, libnvs sends a start command to the remote over the same hidraw interface and waits for data. The data is reassembled, decoded, and provided to the upper layers as a PCM stream. Similarly, when the stream is closed, a stop command is sent to the remote.
+
+NVS also provides components allowing integration with the PulseAudio Sound Server used in Ubuntu. As a result, the remote is visible as a regular microphone
+in all applications that either directly or indirectly use the Ubuntu sound service. The connection is realized by two PulseAudio modules. The first module, module-nvs-source,  implements PulseAudio
+NVS Source linking libnvs to the PulseAudio. The other module, module-nvs-detect, manages NVS sources based on the udev events generated when a HID device is added or removed.
+
+@image html NVS.svg "NVS Architecture"
+
+Note that NVS communicates directly with the HID subsystem and is not aware of any change of the <em>Bluetooth</em> link state (the HID device is not removed by BlueZ when the remote disconnects).
+As a result, a potential state mismatch can occur between the host and the remote. Interrupted streams, caused by a disconnection or device reset, are not resumed until the NVS device is closed
+and opened again. Lastly, care must be taken when restarting an audio stream, as PulseAudio keeps the audio source active for some time after it was released.
+
+*/

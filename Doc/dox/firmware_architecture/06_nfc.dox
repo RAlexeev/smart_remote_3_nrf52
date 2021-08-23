@@ -1,0 +1,77 @@
+/**
+@page nfc NFC pairing
+
+Smart Remote implements the NFC for the tap-to-pair functionality which allows the remote to instantly and securely pair with the host by touching it.
+You can also use the NFC module in a custom way to implement other NFC-based functionalities.
+
+The tap-to-pair feature uses two modules:
+- @ref MOD_NFC "Near Field Communication (NFC) module"
+- @ref MOD_COMS_BLE_LESC "Low Energy Secure Connections (LESC) module"
+
+Both these modules are based on libraries provided by the nRF5 SDK:
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/library_nfc.html" target="blank">NFC library and modules</a>
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/group__ecc.html" target="blank">Elliptic Curve Cryptography interface</a>
+
+@section nfc_security Security and authentication modes
+
+The security settings used in a connection depend on parameters negotiated during the exchange of pairing features.
+
+From the NFC perspective, four security modes are supported:
+- Authenticated LESC: In LESC authenticated mode, the initial link encryption is provided by public keys exchange and Elliptic Curve Diffie Hellman (ECDH) key generation. Authentication is provided by using Out-Of-Band (OOB) data for calculations in authentication checks.
+- Unauthenticated LESC: In LESC unauthenticated mode, link encryption is also provided by public keys exchange and ECDH key generation but authentication checks are skipped.
+- Authenticated LEGACY: In LEGACY authenticated mode, the initial link encryption is based on AES with a temporary key (TK) read from the NFC tag.
+- Unauthenticated LEGACY: In LEGACY unauthenticated mode, the TK has a default value of <tt>0</tt>.
+
+Smart Remote can support all of these four modes, depending on the configuration options that you select. Support for certain modes can be disabled by turning off configuration options, as discussed in @ref nfc_config_flags.
+
+@section security_setting Setting security and authentication
+
+The actual security mode that will be used during the established connection depends on the flags that are sent during the Pairing Request/Response by both peers - the central device and Smart Remote.
+
+@subsection lesc_legacy LESC and Legacy modes
+
+LESC mode is used if both the central device and Smart Remote have the LESC flag set. Otherwise, the Legacy mode is used.
+The following matrix shows how LESC flags set on the peers affect the security mode used.
+
+Central \ Smart Remote|0|1
+:------------------:|:-:|:------:
+0                   |LEGACY|LEGACY
+1                   |LEGACY|LESC
+
+@subsection authentication_modes Authentication in LESC and Legacy modes
+
+In LESC mode, the device which has read the peer's authentication data indicates this by setting the out-of-band (OOB) flag. Authentication check is then executed by the device which has set the OOB flag. However, because Smart Remote uses static Type 2 tag emulation, it does not have the capability to read the peer's data. Therefore, in LESC mode, the Smart Remote's OOB flag is reset. If in LESC mode both OOB flags are set to <tt>0</tt>, the authentication mode is determined by MITM and IOCAPS flags.
+The following matrix shows how OOB flags set on the peers affect the LESC authentication.
+
+Central \ Smart Remote|0|1
+:------------------:|:-:|:----:
+0                   |MITM and IOCAPS|N/A
+1                   |OOB Authentication|N/A
+
+In LEGACY mode, both Smart Remote and the central device have to set OOB flags for using the TK value available in NFC tag. Smart Remote sets the OOB flag when the TK value is present. The central device sets its OOB flag when the TK value has been read.
+The following matrix shows how OOB flags set on the peers affect the Legacy authentication.
+
+Central \ Smart Remote|0|1
+:------------------:|:-:|:------:
+0                   |MITM and IOCAPS|MITM and IOCAPS
+1                   |MITM and IOCAPS|OOB Authentication
+
+@subsection nfc_config_flags Setting configuration flags
+
+The current tap-to-pair implementation for Smart Remote is development oriented. The functionality is also largely dependent on the central device. Therefore, Smart Remote attempts to negotiate the best security option by adapting the pairing response to the pairing request that comes from the central device.
+
+@image html config_flags_nfc.png "Security options that affect the tap-to-pair functionality"
+
+The preferred mode is authenticated LESC. You must set these configuration options to enable this mode:
+- Allow LESC Pairing
+- Enable NFC Tag
+
+If the @ref CONFIG_SEC_LESC_PAIRING flag is off, and the @ref CONFIG_SEC_LEGACY_PAIRING is enabled, Legacy encryption will be used. Both Legacy and LESC modes support OOB authentication.
+
+When the <b>Provide Tap-to-Pair Tag</b> flag is enabled, Smart Remote generates OOB authentication data depending on the security mode used.
+
+Additionally, keep in mind the following points when setting the configuration options:
+- Options using OOB require the NFC module to be enabled.
+- When <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/nfc_ndef_dox.html" target="blank">Full NDEF message</a> is enabled, both LE and EP records are included in Connection Handover. Otherwise, <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/nfc_ndef_generation_dox.html" target="blank">only the LE record</a> is present.
+
+*/

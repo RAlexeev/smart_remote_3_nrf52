@@ -1,0 +1,46 @@
+/**
+@page working_with_nRF52810 Working with Smart Remote 3 for nRF52810
+
+By default, the debugging infrastructure is disabled in the nRF52810 version to save space. However, it is possible to turn on the logger in the application. To do this, you must disable some features. The most convenient one to disable is OTA-DFU, because it is usually not used during firmware development and can release a significant amount of flash memory. The opposite is also possible: to turn on logging in the OTA-DFU bootloader, sacrificing flash space of the application.
+
+This page shows how to enable logging in an nRF52810 application using the flash space of the bootloader.
+
+@section nrf52810_logger_rtt Enabling logging over RTT
+
+To turn on logging over RTT in Smart Remote nRF52810, follow these steps.
+
+In @ref sr3_config_nrf52810_pca20031.h, set the following configuration.
+-# Enable @ref CONFIG_CL_RTT_ENABLED.
+-# Enable @ref CONFIG_DEBUG_ENABLED - (recommended) to get debug assertions. Without this switch, a failed assertion resets the device. @ref CONFIG_DEBUG_ENABLED also turns on other debugging features described in @ref debug_mode.
+-# Disable @ref CONFIG_DFU_ENABLED.
+
+During compilation with such settings, the ROM space of nRF52810 is overflowed. To use the flash space reserved for the bootloader, modify the memory regions in the linker script located in @c Projects/Firmware_nRF52810/armgcc.
+Find and edit the memory configuration:
+
+    MEMORY
+    {
+      FLASH (rx) : ORIGIN = 0x18000, LENGTH = 0xf000
+      RAM (rwx) :  ORIGIN = 0x20001c48, LENGTH = 0x43b8
+    }
+
+Increase the flash space size from `0xf000` to `0x16000`
+
+    FLASH (rx) : ORIGIN = 0x18000, LENGTH = 0x16000
+
+Compile the firmware with these changes.
+
+To disable the bootloader, it is required to clear the UICR storing the bootloader address.
+It can be done by performing a chip erase.
+
+After flashing the application, it is possible to use the nRF52810 firmware with the logger enabled.
+@warning With this modification, the bootloader is removed from the system.
+
+By default, on nRF52810, the logger messages are limited to the `WARNING` level.
+More log information can be displayed by changing @ref CONFIG_LOG_LEVEL_CAP.
+However, enabling more logs requires more ROM space, which can be achieved
+by turning off some Smart Remote features. See @ref logger_commands.
+
+For details of memory layout, refer to @ref memory_configuration.
+
+For instructions on how to display logging information, see @ref logger.
+*/

@@ -1,0 +1,73 @@
+/**
+@page ble_console Bluetooth Console
+
+With <em>Bluetooth</em> Console, it is possible to remotely debug a device over <em>Bluetooth</em> Low Energy. It uses the <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/group__ble__nus.html" target="_blank">Nordic UART Service (NUS)</a> to communicate with the logger module running on the Smart Remote device. The logger module supports several backends: RTT, UART, and <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/lib_cli.html" target="_blank">Command Line Interface</a> (CLI).
+
+The CLI allows for bidirectional communication with Smart Remote. The device can send log messages and you can issue commands to control the device and dynamically change its behavior.
+
+
+@section ble_console_setup Setup
+
+To use the CLI on Smart Remote for nRF52810, you must compile the firmware with the <b>CLI over BLE</b> option enabled in the configuration header file. Due to memory size restrictions, the firmware will not compile with this option unless you disable some other features to provide enough free space in memory. See @ref working_with_nRF52810. <br>
+On Smart Remote nRF52832, this option is enabled by default and present in the precompiled firmware.
+
+@image html cli_over_ble.png "Enabling console over BLE in Keil IDE"
+
+Next, flash the firmware to Smart Remote.
+For instructions on how to flash the device, check @ref firmware_upgrade.
+
+
+After flashing, <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.rds/dita/rds/designs/smart_remote/smart_remote_3_nrf52/quick_start/pair_w_ubuntu.html" target="_blank">pair the device</a> with the NVS Ubuntu host.
+
+@section ble_console_usage Usage
+
+<em>Bluetooth</em> Console is preinstalled and ready to use on the NVS 5.4 LiveCD Ubuntu ISO.
+After launching NVS Ubuntu, you can start <em>Bluetooth</em> Console using a desktop shortcut or from the Linux terminal, using the `BluetoothConsole` command.
+
+@image html ubuntu_desktop_icons.png "Desktop shortcuts to Bluetooth Console and Audio Probe"
+
+<em>Bluetooth</em> Console requires BlueZ running in experimental mode in order to access all BLE GATT characteristics.
+On NVS LiveCD Ubuntu, this is already set up.
+On other Linux systems, you must modify the file `/etc/systemd/system/bluetooth.service`. Find the line:
+
+    ExecStart=/usr/lib/bluetooth/bluetoothd
+
+and add `-E` flag to start BlueZ in experimental mode by default.
+
+    ExecStart=/usr/lib/bluetooth/bluetoothd -E
+
+
+Make sure the device is paired with the host.
+After launching <em>Bluetooth</em> Console, you can connect to a compatible device.
+Smart Remote devices that are paired with the host should be visible in the <b>Select device</b> menu.
+
+@image html ble_console_select_device.png "Selecting a device in Bluetooth Console"
+
+When the CLI over BLE connection is established, a black terminal window appears.
+You can now enter commands.
+
+@image html ble_console_connected.png "Active CLI over BLE connection"
+
+If the delay during typing is significant, you can make the console more responsive by disabling slave latency on the <em>Bluetooth</em> connection. This can be done using the command `ble sl disable`.
+
+@note Disabled slave latency comes at a cost of increased power usage.
+<br>
+
+@note The changes made through the console (such as BLE slave latency, logger settings) are discarded when Smart Remote goes to sleep mode.
+
+You can easily check what commands are currently available on the Smart Remote device by pressing `Tab`. Autocompletion of commands is also available with the `Tab` key. See @ref logger.
+
+@image html ble_console_slave_latency.png "Disabling slave latency to make BLE console more responsive"
+
+When the Smart Remote goes to sleep, the <em>Bluetooth</em> connection becomes inactive.
+This is indicated to the user by striking through the device name and graying out the terminal.
+When the device wakes up, the terminal turns black again.
+
+@image html ble_console_inactive.png "Grayed out terminal after device has disconnected"
+
+It is possible to control and communicate with multiple devices at the same time.
+If the user selects more paired devices, each one will have its own terminal in a separate tab.
+
+@image html ble_console_multi.png "Multiple Smart Remote devices used simultaneously."
+
+*/

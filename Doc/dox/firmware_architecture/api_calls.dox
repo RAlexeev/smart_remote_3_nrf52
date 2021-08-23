@@ -1,0 +1,49 @@
+/**
+@page api_calls_pattern Pattern of the API calls
+
+Driver API and module API of the Smart Remote firmware follow distinct patterns.
+
+@section api_calls_pattern_driver Driver API
+
+Most of the drivers are using similar API calls that reflect the following pattern.
+- <tt>ret_code_t drv_xxx_init(drv_xxx_event_handler_t event_handler); </tt>
+	
+	Initializes the given driver and sets the event handler. Input drivers use the handler to pass new data to upper layers. Output drivers use the handler to confirm execution of the requested action. Note that the event handler can be called from interrupt context.
+
+- <tt>ret_code_t drv_xxx_enable(); ret_code_t drv_xxx_disable(); </tt>
+	
+	Controls the peripheral state. When the peripheral is enabled, it can report or transmit data, but requires more power. A disabled peripheral consumes as little power as possible, but is inoperative.
+
+- <tt>ret_code_t drv_xxx_schedule_read(<pointer to memory buffer>); </tt>
+	
+	Drivers of peripherals that require polling implement this function to start the readout cycle. The memory pointed by the call is used to store data and will be returned back to the caller in the event handler. Since drivers can perform only one operation at a time, no further readouts should be scheduled until the last one has been confirmed by the event handler.
+
+- <tt>ret_code_t drv_xxx_action(); </tt>
+
+	Some peripherals implement dedicated API calls to perform peripheral-specific operations. Execution of such operations is confirmed by an event handler call. An example of such a peripheral is the @ref DRV_IR "drv_ir_sirc" driver, which implements a drv_ir_send_symbol() call to send SIRC symbols using infrared.
+
+- <tt>bool drv_xxx_wakeup_prepare(bool wakeup); </tt>
+	
+	This function prepares the peripheral for deep sleep and subsequent wakeup (if the wakeup parameter is true).
+
+@section api_calls_pattern_module Module API
+	
+The module API is similar to the driver API and also follows a pattern.
+
+- <tt>ret_code_t m_xxx_init(); </tt>
+	
+	Initializes the given module and the underlying driver.
+
+- <tt>ret_code_t m_xxx_enable(); ret_code_t m_xxx_disable(); </tt>
+	
+	Enables or disables the given module.
+
+- <tt>bool m_xxx_event_handler(const event_t *p_event); </tt>
+	
+	Interface to the event bus. This function is called for each event in the system.
+
+- <tt>bool m_xxx_wakeup_prepare(m_pwr_mgmt_shutdown_type_t shutdown_type); </tt>
+	
+	This function prepares the given module and the underlying driver for deep sleep and subsequent wakeup (depending on the shutdown type).
+
+*/

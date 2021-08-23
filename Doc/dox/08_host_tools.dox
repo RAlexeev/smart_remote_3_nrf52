@@ -1,0 +1,14 @@
+/**
+@page host_tools Host tools
+
+Smart Remote 3 nRF52 v1.2 comes with the following host tools: @ref audioprobe, @ref ble_console, and @ref nvs. The purpose of these programs is to make work with Smart Remote easier and give developers more opportunities when preparing <em>Bluetooth</em> and audio features.
+
+Tools are available in the NVS 5.4 LiveCD distribution. In order to use them, launch or install the NVS 5.4 LiveCD ISO image on a virtual machine or boot the LiveCD ISO from a USB stick.
+
+@subpage audioprobe
+
+@subpage ble_console
+
+@subpage nvs
+
+*/

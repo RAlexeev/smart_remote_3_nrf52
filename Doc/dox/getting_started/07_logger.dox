@@ -1,0 +1,165 @@
+/**
+@page logger Logger and CLI
+
+Smart Remote features an extended debugging infrastructure that is based on the nRF5 SDK v14.2.0 <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/nrf_log.html" target="_blank">Logger</a> and <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/lib_cli.html" target="_blank">Command Line Interface</a> modules.
+
+The logger is the main communication channel between the developer integrating the system and the firmware.
+
+You can use three backends to work with the logger and CLI.
+- Real Time Terminal (RTT)
+- UART
+- <em>Bluetooth</em> Low Energy (BLE)
+
+The RTT logger with CLI is by default __enabled__ in __nRF52832__ projects.
+
+In __nRF52810__ projects, the logger is by default __disabled__.
+See @ref working_with_nRF52810 for instructions on how to enable it.
+
+@section logger_setup Setting up logger and CLI over RTT
+
+RTT communication is established in two steps:
+- J-Link Commander is used to start an RTT connection,
+- a telnet client is used for communication over the RTT channel.
+
+To set up communication over RTT, download and install <a href="https://www.segger.com/downloads/jlink" target="_blank">J-Link</a>.
+
+@subsection logger_windows Using RTT on Windows
+To communicate over RTT, you need a telnet client. On Windows, <a href="https://www.putty.org/" target="_blank">PuTTY</a> is recommended.
+
+@note Using RTT Viewer may result in incorrect display of data from the logger and CLI.
+
+Make sure "jlink.exe" is in your PATH system variable.
+To start J-Link and automatically connect to Smart Remote, run
+@code
+jlink.exe -autoconnect 1 -device NRF52832_XXAA -if SWD -speed 4000
+@endcode
+
+You will see the J-Link Commander starting and connecting to the device.
+@code
+SEGGER J-Link Commander V6.14d (Compiled Apr 19 2017 18:26:24)
+DLL version V6.14d, compiled Apr 19 2017 18:25:54
+
+Connecting to J-Link via USB...O.K.
+Firmware: J-Link OB-SAM3U128-V2-NordicSemi compiled Jan 12 2018 16:05:20
+Hardware version: V1.00
+S/N:
+VTref = 3.300V
+Device "NRF52832_XXAA" selected.
+
+Found SW-DP with ID 0x2BA01477
+Found SW-DP with ID 0x2BA01477
+AP-IDR: 0x24770011, Type: AHB-AP
+AHB-AP ROM: 0xE00FF000 (Base addr. of first ROM table)
+Found Cortex-M4 r0p1, Little endian.
+FPUnit: 6 code (BP) slots and 2 literal slots
+CoreSight components:
+ROMTbl[0] @ E00FF000
+ROMTbl[0][0]: E000E000, CID: B105E00D, PID: 000BB00C SCS
+ROMTbl[0][1]: E0001000, CID: B105E00D, PID: 003BB002 DWT
+ROMTbl[0][2]: E0002000, CID: B105E00D, PID: 002BB003 FPB
+ROMTbl[0][3]: E0000000, CID: B105E00D, PID: 003BB001 ITM
+ROMTbl[0][4]: E0040000, CID: B105900D, PID: 000BB9A1 TPIU
+ROMTbl[0][5]: E0041000, CID: B105900D, PID: 000BB925 ETM
+Cortex-M4 identified.
+J-Link>
+@endcode
+
+When connecting to the device, J-Link starts a telnet server which can be used for bidirectional communication. To connect, run a PuTTY session with the <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/lib_cli.html#lib_cli_terminal_settings" target="_blank">settings described here</a>.
+Logging data from Smart Remote appears with the possibility to issue CLI commands.
+
+@image html logger_rtt_windows.png Using PuTTY to communicate with Smart Remote
+
+If you do not see logs from Smart Remote, restart the device from J-Link console with `r` (reset) and `g` (go).
+
+    J-Link>r
+    J-Link>g
+
+The device only starts logging on RTT if the debugger is connected on startup.
+
+@subsection logger_linux Using RTT on Linux
+
+To communicate over RTT on Linux, install <a href="https://www.segger.com/downloads/jlink" target="_blank">J-Link software</a>.
+Make sure JLinkExe and JLinkRTTClient are in your system path. Then, run:
+
+    JLinkExe -autoconnect 1 -device NRF52832_XXAA -if SWD -speed 4000
+
+In a separate terminal, start the RTT client.
+
+    JLinkRTTClient
+
+If you do not receive logs from Smart Remote, go to the JLinkExe terminal and reset the device using `r` (reset) and `g` (go).
+
+RTT logger and CLI also work with the terminal in @ref audioprobe.
+
+@section logger_uart Communication over UART
+
+To enable communication over UART, compile the firmware with the option @ref CONFIG_CL_UART_ENABLED.
+You can set UART pins with @ref CONFIG_UART_TX_PIN and @ref CONFIG_UART_RX_PIN.
+For the Shield target, the UART pins are preconfigured.
+The UART baud rate can be set with @ref CONFIG_CL_UART_BAUDRATE. Parity can be set with @ref CONFIG_CL_UART_PARITY. Hardware flow control can be enabled with @ref CONFIG_CL_UART_HWFC.
+
+@image html logger_uart.png
+
+
+@section logger_ble Communication over BLE
+
+You can communicate with Smart Remote over a wireless <em>Bluetooth</em> Low Energy link.
+
+@ref ble_console is provided in NVS 5.4 Ubuntu LiveCD to give access to logger and CLI over BLE.
+
+@section logger_commands Logger configuration
+
+In Smart Remote, each event is logged with a timestamp (value in the brackets), which is the time since the firmware start expressed in RTC ticks (one RTC tick = 1/32768 s).
+When the logger "deferred" mode is used (this is the default setting), logging does not impact time-sensitive tasks. Instead, they are saved in a queue and processed in idle state.
+See <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/nrf_log.html" target="_blank">logger documentation</a> for details of log processing.
+
+It is possible to log events on different levels of severity.
+Five levels are available – Debug, Info, Warning, Error, and None.
+The logging system is highly configurable:
+- The number of debugging events generated by each module is controlled by _Module logging level_ available under _Logging Options_ for each Smart Remote feature.
+- Logging level limit is set separately for RTT, UART, and BLE transports.
+- Logging level can be limited globally for the whole firmware at compile time with @ref CONFIG_LOG_LEVEL_CAP.
+
+The final number of log messages (compiled-in limit) depends on the strictest of the above log level settings.
+When CLI console is used, the log level limitation of the backend is not taken into account.
+With CLI, the backend logging level is just an initial setting which can be changed.
+
+- Example 1: user sets __NFC logging level__ to Debug and the __global logging level cap__ to Warning. <br>
+Only messages of level Warning or higher (Warning and Error) are printed out.
+
+- Example 2: user sets __NFC logging level__ to Debug, __global logging level cap__ to Debug, __RTT logging level__ to Info, and __UART logging level__ to Warning.<br>
+On RTT, only messages of level Info or higher (Info, Warning, and Error) are printed out.<br>
+On UART, only messages of level Warning or higher are printed out.
+
+@image html logger_options.png Logger and CLI configuration in Smart Remote
+
+On each backend (transport), it is possible to use only the logger (one-way communication) or the logger with the console (two-way communication).
+An exception is the BLE backend, where using the logger without the console is not possible.
+
+The console can be also used without the logger. To enable the console without the logger on a specific backend, choose the CLI interface and disable the option _Use CLI as logger backend_.
+@image html logger_cli_plain.png Choosing CLI without the logger
+
+When the CLI is used, the number of logged events can be dynamically filtered at runtime for each module and each backend independently using the `log` command. The same module can have different logging settings on different backends.
+
+To see the current runtime logging levels, use the `log status` command.
+@note Setting logging level at runtime is possible up to the compiled-in limit,
+which is specified by the global cap, transport logging level, and compiled-in module logging level.
+
+- Example 3: user sets __NFC logging level__ to Info, __global logging level cap__ to Debug, and __BLE logging level__ to Warning. <br>
+By default, the messages of level Warning or higher are printed out.<br>
+With CLI commands, it is possible to set dynamic logging level at runtime up to the global cap, in this case to Debug, Info, Warning, or Error.<br>
+When connected to CLI over BLE, the user can issue a command like `log enable debug m_nfc` to set runtime NFC logging level to Debug.
+
+@image html logger_log_enable.png Changing logging level of a module at runtime using CLI command
+
+@section logger_cli_commands CLI commands in Smart Remote
+
+Smart Remote comes with some built-in commands which help the user inspect and control the system. Users can <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/lib_cli.html#lib_cli_commands_sub_creation" target="_blank">register their own commands</a>.
+
+
+For a list of commands available, press `Tab`. To receive information about each command, use the `--help` switch.
+Autocompletion is also available for each command and subcommand.
+
+@image html logger_cli_commands.png Getting help on CLI commands
+
+*/

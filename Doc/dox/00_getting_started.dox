@@ -1,0 +1,16 @@
+/**
+@page getting_started Getting started
+
+This Getting Started guide provides you with all the essential information to start working with the Smart Remote firmware.
+
+@subpage logger
+
+@subpage firmware_config
+
+@subpage working_with_nRF52810
+
+@subpage memory_configuration
+
+@subpage debug_mode
+
+*/

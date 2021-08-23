@@ -1,0 +1,72 @@
+/**
+@page power_management Power management
+
+A very important quality attribute of the Smart Remote device is its power
+consumption. A properly designed power management mechanism plays a crucial role in ensuring that the device
+can run as long as possible with the provided power budget.
+For typical power measurements, see <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.rds/dita/rds/designs/smart_remote/smart_remote_3_nrf52/intro/frontpage.html" target="blank">Smart Remote 3 for nRF52 User Guide v2.0</a>.
+
+@note Power management is controlled with @ref CONFIG_PWR_MGMT_ENABLED and is
+      enabled by default.
+
+@section pm_modes Power modes
+
+Smart Remote effectively stays in one of two power modes. In normal
+mode, the device is able to perform any activities, including connecting to a
+BLE host, transmitting data, and reading information from sensors. In low
+power mode, also referred to as deep sleep mode, the device turns off all of its
+peripherals, except those used for triggering a wakeup event, and the SoC enters
+system off mode.
+
+@section pm_dsenter Entering deep sleep mode
+
+The device enters low power mode after @ref CONFIG_PWR_MGMT_CONFIG_STANDBY_TIMEOUT_S
+seconds pass without any user activity. Once the switch to low-power mode is started,
+it cannot be stopped, and the device eventually enters deep sleep mode.
+To ensure that all peripherals are properly configured (turned off), a
+notification is sent to the registered modules. Each module that must take action
+before the device enters low power mode registers a callback function using
+<a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/group__nrf__pwr__mgmt.html#ga4adfb2cc1fcbfe94a0fb1453b0cf30ec" target="blank">NRF_PWR_MGMT_HANDLER_REGISTER</a>. When this callback is called, the module
+attempts to switch off. If a switch-off is possible, the callback function returns
+true. If the shutdown function returns false, the shutdown is postponed.
+When the module is ready for shutdown, it calls <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/group__nrf__pwr__mgmt.html#gacc5acf4fd976c9288c7549c8acf16d64" target="blank">nrf_pwr_mgmt_shutdown(NRF_PWR_MGMT_SHUTDOWN_CONTINUE)</a> 
+to reevalute the shutdown function and continue the power-off procedure. 
+The system attempts to continue the shutdown every second.
+
+The order in which the callback functions are executed depends on the priority
+given during callback registration.
+@note No assumptions can be made about the order in which callback functions
+      are called, if they were registered using the same priority.
+
+When the last module in the hierarchy confirms its turn-off, the device enters deep
+sleep mode.
+
+@section pm_dsexit Leaving deep sleep mode
+
+The device leaves the deep sleep mode when one of the wakeup events is
+triggered. Available wakeup event sources are:
+- low power accelerometer (enabled with @ref CONFIG_ACC_WAKEUP_SOURCE),
+- GPIO keyboard (enabled with @ref CONFIG_KBD_WAKEUP_SOURCE),
+- NFC (enabled with @ref CONFIG_NFC_WAKEUP_SOURCE).
+
+
+By default, only low power accelerometer is used as a wakeup source.
+
+@note If a specific device should not be used as a source of the wakeup event,
+      the configuration option mentioned above must be disabled, because wakeup sources
+      are powered on during deep sleep mode.
+
+@note Only the GPIO-based keyboard can be used as a source of a wakeup event.
+
+@section pm_dsemergency Emergency deep sleep mode
+
+When battery voltage level drops to the level defined by @ref CONFIG_BATT_MEAS_MIN_LEVEL,
+the device enters emergency deep sleep mode. After entering this mode, the device
+cannot be woken up by any event. To start the device again, remove the old battery set
+and replace it with a new one.
+
+@note For the device to enter emergency deep sleep mode, the battery voltage
+      measurement must be enabled by setting @ref CONFIG_BATT_MEAS_ENABLED
+      accordingly.
+
+*/

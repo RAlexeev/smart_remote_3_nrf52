@@ -1,0 +1,47 @@
+/**
+@page ir Infrared transmitter
+
+Smart Remote features a built-in protocol-agnostic infrared transmission framework, which can be used
+to transmit any IR symbol. The framework uses a protocol-specific driver which converts a given symbol
+into a series of commands sent to the PWM peripheral, which controls the IR diode. Because transmission
+is fully controlled by the PWM hardware (commands are fetched by the PWM peripheral using DMA), the
+infrared subsystem has no hard real-time requirements. It also requires only a minimum amount of
+processing power and memory.
+
+The Smart Remote firmware comes with two IR protocols implemented (SIRC and NEC), however support
+for new ones can be easily added. Additionally, there is no technical obstacle to support several
+protocols simultaneously.
+
+@section ir_details Implementation details
+
+The infrared transmitter subsystem consists of the protocol-agnostic module and the protocol-specific driver.
+The module is responsible for integration with the Smart Remote firmware infrastructure, as well as for 
+performing high-level power and transmission management.
+
+The IR module provides driver with the symbol (@ref sr3_ir_symbol_t) that should be transmitted, which is repeated in a loop until cancellation.
+The driver does not control the IR transmitter directly. Instead, the given symbol is translated into a series of PWM control words fetched from the memory
+and interpreted by the PWM controller.
+
+@image html sirc_modulation.svg "SIRC Modulation"
+
+Each control word specifies PWM output polarity and duty cycle and can be replayed for a predefined number of times.
+For example, in the SIRC protocol, a logical one bit is transmitted as a 1.2 ms pulse burst followed by 600 us of silence
+while the logical zero bit is represented as a 600 us pulse burst followed by 600 us of silence. To transmit the presented
+"10" sequence, only five control words and the following PWM setup are needed:
+
+PWM settings:
+- PWM Clock:                    1 MHz
+- PWM Top Value:                25
+- PWM Cycle Time:               1 us * 25 = 25 us (which gives 40 kHz carrier frequency used by SIRC)
+- Control word repeat count:    24 (control word time: 24 * 25 us = 600 us)
+
+Control Words:
+    - Logical one:              8, 8, 0 (24 pulses with 8/25 duty cycle, followed by 24 pulses with 8/25 duty cycle, followed by 24 pulses with 0/25 duty cycle)
+    - Logical zero:             8, 0    (24 pulses with 8/25 duty cycle, followed by 24 pulses with 0/25 duty cycle)
+
+@image html sirc_symbol.svg "SIRC Symbol"
+
+With the presented approach, the complete 12-bit SIRC symbol can be encoded using just 41 PWM control words. Moreover, the whole
+symbol transmission is performed solely by the PWM controller hardware. The infrared subsystem does not interfere with other system activity.
+
+*/

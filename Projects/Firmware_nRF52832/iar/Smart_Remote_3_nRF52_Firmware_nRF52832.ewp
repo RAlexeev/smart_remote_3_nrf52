@@ -1,0 +1,3888 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+
+<project>
+  <fileVersion>2</fileVersion>  <configuration>
+    <name>PCA63519-SR3_nRF52832_Shield</name>
+    <toolchain>
+      <name>ARM</name>
+    </toolchain>
+    <debug>0</debug>
+    <settings>
+      <name>General</name>
+      <archiveVersion>3</archiveVersion>
+      <data>
+        <version>22</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>ExePath</name>
+          <state>_build</state>
+        </option>
+        <option>
+          <name>ObjPath</name>
+          <state>_build</state>
+        </option>
+        <option>
+          <name>ListPath</name>
+          <state>_build</state>
+        </option>
+        <option>
+          <name>Variant</name>
+          <version>20</version>
+          <state>34</state>
+        </option>
+        <option>
+          <name>GEndianMode</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>Input variant</name>
+          <version>3</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>Input description</name>
+          <state>Full formatting.</state>
+        </option>
+        <option>
+          <name>Output variant</name>
+          <version>2</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>Output description</name>
+          <state>Full formatting.</state>
+        </option>
+        <option>
+          <name>GOutputBinary</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>FPU</name>
+          <version>2</version>
+          <state>5</state>
+        </option>
+        <option>
+          <name>OGCoreOrChip</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>GRuntimeLibSelect</name>
+          <version>0</version>
+          <state>2</state>
+        </option>
+        <option>
+          <name>GRuntimeLibSelectSlave</name>
+          <version>0</version>
+          <state>2</state>
+        </option>
+        <option>
+          <name>RTDescription</name>
+          <state>Use the full configuration of the C/C++ runtime library. Full locale interface, C locale, file descriptor support, multibytes in printf and scanf, and hex floats in strtod.</state>
+        </option>
+        <option>
+          <name>OGProductVersion</name>
+          <state>6.10.3.52260</state>
+        </option>
+        <option>
+          <name>OGLastSavedByProductVersion</name>
+          <state>7.20.2.7418</state>
+        </option>
+        <option>
+          <name>GeneralEnableMisra</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GeneralMisraVerbose</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>OGChipSelectEditMenu</name>
+          <state>nrf52832_xxaa	nRF52832_xxAA</state>
+        </option>
+        <option>
+          <name>GenLowLevelInterface</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GEndianModeBE</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OGBufferedTerminalOutput</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GenStdoutInterface</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GeneralMisraRules98</name>
+          <version>0</version>
+          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
+        </option>
+        <option>
+          <name>GeneralMisraVer</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GeneralMisraRules04</name>
+          <version>0</version>
+          <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
+        </option>
+        <option>
+          <name>RTConfigPath2</name>
+          <state>$TOOLKIT_DIR$\INC\c\DLib_Config_Full.h</state>
+        </option>
+        <option>
+          <name>GFPUCoreSlave</name>
+          <version>20</version>
+          <state>39</state>
+        </option>
+        <option>
+          <name>GBECoreSlave</name>
+          <version>20</version>
+          <state>39</state>
+        </option>
+        <option>
+          <name>OGUseCmsis</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>OGUseCmsisDspLib</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GRuntimeLibThreads</name>
+          <state>0</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>ICCARM</name>
+      <archiveVersion>2</archiveVersion>
+      <data>
+        <version>31</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>CCGuardCalls</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCOptimizationNoSizeConstraints</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCDefines</name>
+          <state>APP_SCHEDULER_ENABLED=1</state>
+          <state>ARM_MATH_CM4</state>
+          <state>BLE_STACK_SUPPORT_REQD</state>
+          <state>CONFIG_BOARD_NRF52832_PCA63519</state>
+          <state>DISABLE_FLOAT_API</state>
+          <state>ENABLE_ASSERTIONS</state>
+          <state>FIXED_POINT</state>
+          <state>FLOAT_ABI_HARD</state>
+          <state>HAL_NFC_ENGINEERING_BC_FTPAN_WORKAROUND</state>
+          <state>HAVE_LRINT</state>
+          <state>HAVE_LRINTF</state>
+          <state>NRF52</state>
+          <state>NRF52832_XXAA</state>
+          <state>NRF_SD_BLE_API_VERSION=5</state>
+          <state>OPUS_ARM_ASM</state>
+          <state>OPUS_ARM_INLINE_ASM</state>
+          <state>OPUS_ARM_INLINE_EDSP</state>
+          <state>OPUS_ARM_INLINE_MEDIA</state>
+          <state>OPUS_ARM_MAY_HAVE_EDSP</state>
+          <state>OPUS_ARM_PRESUME_EDSP</state>
+          <state>OPUS_BUILD</state>
+          <state>S132</state>
+          <state>SOFTDEVICE_PRESENT</state>
+          <state>SWI_DISABLE0</state>
+          <state>USE_APP_CONFIG</state>
+          <state>VAR_ARRAYS</state>
+        </option>
+        <option>
+          <name>CCPreprocFile</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCPreprocComments</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCPreprocLine</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListCFile</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListCMnemonics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListCMessages</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListAssFile</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListAssSource</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCEnableRemarks</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCDiagSuppress</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCDiagRemark</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCDiagWarning</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCDiagError</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCObjPrefix</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCAllowList</name>
+          <version>1</version>
+          <state>11111110</state>
+        </option>
+        <option>
+          <name>CCDebugInfo</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IEndianMode</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IProcessor</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IExtraOptionsCheck</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IExtraOptions</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCLangConformance</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCSignedPlainChar</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCRequirePrototypes</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCMultibyteSupport</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCDiagWarnAreErr</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCCompilerRuntimeInfo</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IFpuProcessor</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OutputFile</name>
+          <state>$FILE_BNAME$.o</state>
+        </option>
+        <option>
+          <name>CCLibConfigHeader</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>PreInclude</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CompilerMisraOverride</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCIncludePath2</name>
+          <state>$PROJ_DIR$\..\..\..\Source\Bootloader</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Common</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Configuration</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Debug</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Drivers</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\include</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Modules</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_bas</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_dis</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_hids</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_ias</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_nus</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\nrf_ble_gatt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\device</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ble_flash</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\clock</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\delay</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\gpiote</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\hal</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pdm</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ppi</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pwm</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\rng</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\saadc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\twi_master</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\wdt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_fifo</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\balloc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\ble_uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\rtt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc16</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc32</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\cc310_lib</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\micro_ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\nrf_crypto_sw</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log\src</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_memobj</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_mpu</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_ringbuf</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_section_vars</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_stack_guard</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_task_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fds</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fstorage</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\gpiote</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault\nrf52</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mem_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mutex</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\pwr_mgmt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\queue</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\sha256</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\strerror</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\svc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\timer</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\twi_mngr</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ac_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_oob_advdata</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_pair_msg</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ep_oob_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\hs_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\le_oob_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\message</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\record</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\text</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib\hal_t2t</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s132\headers</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s132\headers\nrf52</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain\cmsis\include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\micro-ecc\micro-ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\nrf_cc310\include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt</state>
+          <state>$PROJ_DIR$\..\config</state>
+        </option>
+        <option>
+          <name>CCStdIncCheck</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCCodeSection</name>
+          <state>.text</state>
+        </option>
+        <option>
+          <name>IInterwork2</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IProcessorMode2</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCOptLevel</name>
+          <state>3</state>
+        </option>
+        <option>
+          <name>CCOptStrategy</name>
+          <version>0</version>
+          <state>2</state>
+        </option>
+        <option>
+          <name>CCOptLevelSlave</name>
+          <state>3</state>
+        </option>
+        <option>
+          <name>CompilerMisraRules98</name>
+          <version>0</version>
+          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
+        </option>
+        <option>
+          <name>CompilerMisraRules04</name>
+          <version>0</version>
+          <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
+        </option>
+        <option>
+          <name>CCPosIndRopi</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCPosIndRwpi</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCPosIndNoDynInit</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccLang</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccCDialect</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccAllowVLA</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccCppDialect</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccExceptions</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccRTTI</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccStaticDestr</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccCppInlineSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccCmsis</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccFloatSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCNoLiteralPool</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCOptStrategySlave</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>AARM</name>
+      <archiveVersion>2</archiveVersion>
+      <data>
+        <version>9</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>AObjPrefix</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>AEndian</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>ACaseSensitivity</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>MacroChars</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AWarnEnable</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AWarnWhat</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AWarnOne</name>
+          <state></state>
+        </option>
+        <option>
+          <name>AWarnRange1</name>
+          <state></state>
+        </option>
+        <option>
+          <name>AWarnRange2</name>
+          <state></state>
+        </option>
+        <option>
+          <name>ADebug</name>
+          <state></state>
+        </option>
+        <option>
+          <name>AltRegisterNames</name>
+          <state>0</state>
+        </option>
+        <option>
+      <name>ADefines</name>
+          <state>APP_SCHEDULER_ENABLED=1</state>
+          <state>ARM_MATH_CM4</state>
+          <state>BLE_STACK_SUPPORT_REQD</state>
+          <state>CONFIG_BOARD_NRF52832_PCA63519</state>
+          <state>DISABLE_FLOAT_API</state>
+          <state>ENABLE_ASSERTIONS</state>
+          <state>FIXED_POINT</state>
+          <state>FLOAT_ABI_HARD</state>
+          <state>HAL_NFC_ENGINEERING_BC_FTPAN_WORKAROUND</state>
+          <state>HAVE_LRINT</state>
+          <state>HAVE_LRINTF</state>
+          <state>NRF52</state>
+          <state>NRF52832_XXAA</state>
+          <state>NRF_SD_BLE_API_VERSION=5</state>
+          <state>OPUS_ARM_ASM</state>
+          <state>OPUS_ARM_INLINE_ASM</state>
+          <state>OPUS_ARM_INLINE_EDSP</state>
+          <state>OPUS_ARM_INLINE_MEDIA</state>
+          <state>OPUS_ARM_MAY_HAVE_EDSP</state>
+          <state>OPUS_ARM_PRESUME_EDSP</state>
+          <state>OPUS_BUILD</state>
+          <state>S132</state>
+          <state>SOFTDEVICE_PRESENT</state>
+          <state>SWI_DISABLE0</state>
+          <state>USE_APP_CONFIG</state>
+          <state>VAR_ARRAYS</state>
+        </option>
+        <option>
+          <name>AList</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AListHeader</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>AListing</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>Includes</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>MacDefs</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>MacExps</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>MacExec</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>OnlyAssed</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>MultiLine</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>PageLengthCheck</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>PageLength</name>
+          <state>80</state>
+        </option>
+        <option>
+          <name>TabSpacing</name>
+          <state>8</state>
+        </option>
+        <option>
+          <name>AXRef</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AXRefDefines</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AXRefInternal</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AXRefDual</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AProcessor</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>AFpuProcessor</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>AOutputFile</name>
+          <state>$FILE_BNAME$.o</state>
+        </option>
+        <option>
+          <name>AMultibyteSupport</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>ALimitErrorsCheck</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>ALimitErrorsEdit</name>
+          <state>100</state>
+        </option>
+        <option>
+          <name>AIgnoreStdInclude</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AUserIncludes</name>
+          <state>$PROJ_DIR$\..\..\..\Source\Bootloader</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Common</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Configuration</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Debug</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Drivers</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\include</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Modules</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_bas</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_dis</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_hids</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_ias</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_nus</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\nrf_ble_gatt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\device</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ble_flash</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\clock</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\delay</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\gpiote</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\hal</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pdm</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ppi</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pwm</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\rng</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\saadc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\twi_master</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\wdt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_fifo</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\balloc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\ble_uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\rtt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc16</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc32</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\cc310_lib</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\micro_ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\nrf_crypto_sw</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log\src</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_memobj</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_mpu</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_ringbuf</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_section_vars</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_stack_guard</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_task_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fds</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fstorage</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\gpiote</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault\nrf52</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mem_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mutex</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\pwr_mgmt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\queue</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\sha256</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\strerror</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\svc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\timer</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\twi_mngr</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ac_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_oob_advdata</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_pair_msg</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ep_oob_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\hs_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\le_oob_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\message</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\record</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\text</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib\hal_t2t</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s132\headers</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s132\headers\nrf52</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain\cmsis\include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\micro-ecc\micro-ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\nrf_cc310\include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt</state>
+          <state>$PROJ_DIR$\..\config</state>
+        </option>
+        <option>
+          <name>AExtraOptionsCheckV2</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AExtraOptionsV2</name>
+          <state></state>
+        </option>
+        <option>
+          <name>AsmNoLiteralPool</name>
+          <state>0</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>OBJCOPY</name>
+      <archiveVersion>0</archiveVersion>
+      <data>
+        <version>1</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>OOCOutputFormat</name>
+          <version>2</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OCOutputOverride</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OOCOutputFile</name>
+          <state>PCA63519-SR3_nRF52832_Shield.hex</state>
+        </option>
+        <option>
+          <name>OOCCommandLineProducer</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OOCObjCopyEnable</name>
+          <state>1</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>CUSTOM</name>
+      <archiveVersion>3</archiveVersion>
+      <data>
+        <extensions></extensions>
+        <cmdline></cmdline>
+      </data>
+    </settings>
+    <settings>
+      <name>BICOMP</name>
+      <archiveVersion>0</archiveVersion>
+      <data/>
+    </settings>
+    <settings>
+      <name>BUILDACTION</name>
+      <archiveVersion>1</archiveVersion>
+      <data>
+        <prebuild></prebuild>
+        <postbuild></postbuild>
+      </data>
+    </settings>
+    <settings>
+      <name>ILINK</name>
+      <archiveVersion>0</archiveVersion>
+      <data>
+        <version>16</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>IlinkLibIOConfig</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>XLinkMisraHandler</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkInputFileSlave</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkOutputFile</name>
+          <state>Smart_Remote_3_nRF52_Firmware_nRF52832.out</state>
+        </option>
+        <option>
+          <name>IlinkDebugInfoEnable</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkKeepSymbols</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinaryFile</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinarySymbol</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinarySegment</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinaryAlign</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkDefines</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkConfigDefines</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkMapFile</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkLogFile</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogInitialization</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogModule</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogSection</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogVeneer</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkIcfOverride</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkIcfFile</name>
+      <state>$PROJ_DIR$\Smart_Remote_3_nRF52_iar_nRF5x.icf</state>
+        </option>
+        <option>
+          <name>IlinkIcfFileSlave</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkEnableRemarks</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkSuppressDiags</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkTreatAsRem</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkTreatAsWarn</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkTreatAsErr</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkWarningsAreErrors</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkUseExtraOptions</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkExtraOptions</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkLowLevelInterfaceSlave</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkAutoLibEnable</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkAdditionalLibs</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkOverrideProgramEntryLabel</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkProgramEntryLabelSelect</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkProgramEntryLabel</name>
+          <state>__iar_program_start</state>
+        </option>
+        <option>
+          <name>DoFill</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>FillerByte</name>
+          <state>0xFF</state>
+        </option>
+        <option>
+          <name>FillerStart</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>FillerEnd</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>CrcSize</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcAlign</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcPoly</name>
+          <state>0x11021</state>
+        </option>
+        <option>
+          <name>CrcCompl</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CrcBitOrder</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CrcInitialValue</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>DoCrc</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkBE8Slave</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkBufferedTerminalOutput</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkStdoutInterfaceSlave</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcFullSize</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkIElfToolPostProcess</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogAutoLibSelect</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogRedirSymbols</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogUnusedFragments</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkCrcReverseByteOrder</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkCrcUseAsInput</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptInline</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptExceptionsAllow</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptExceptionsForce</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkCmsis</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptMergeDuplSections</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkOptUseVfe</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptForceVfe</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkStackAnalysisEnable</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkStackControlFile</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkStackCallGraphFile</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CrcAlgorithm</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcUnitSize</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkThreadsSlave</name>
+          <state>1</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>IARCHIVE</name>
+      <archiveVersion>0</archiveVersion>
+      <data>
+        <version>0</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>IarchiveInputs</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IarchiveOverride</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IarchiveOutput</name>
+          <state>###Unitialized###</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>BILINK</name>
+      <archiveVersion>0</archiveVersion>
+      <data/>
+    </settings>
+  </configuration>  <configuration>
+    <name>PCA20023-SR3_nRF52832_Product_Example</name>
+    <toolchain>
+      <name>ARM</name>
+    </toolchain>
+    <debug>0</debug>
+    <settings>
+      <name>General</name>
+      <archiveVersion>3</archiveVersion>
+      <data>
+        <version>22</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>ExePath</name>
+          <state>_build</state>
+        </option>
+        <option>
+          <name>ObjPath</name>
+          <state>_build</state>
+        </option>
+        <option>
+          <name>ListPath</name>
+          <state>_build</state>
+        </option>
+        <option>
+          <name>Variant</name>
+          <version>20</version>
+          <state>34</state>
+        </option>
+        <option>
+          <name>GEndianMode</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>Input variant</name>
+          <version>3</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>Input description</name>
+          <state>Full formatting.</state>
+        </option>
+        <option>
+          <name>Output variant</name>
+          <version>2</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>Output description</name>
+          <state>Full formatting.</state>
+        </option>
+        <option>
+          <name>GOutputBinary</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>FPU</name>
+          <version>2</version>
+          <state>5</state>
+        </option>
+        <option>
+          <name>OGCoreOrChip</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>GRuntimeLibSelect</name>
+          <version>0</version>
+          <state>2</state>
+        </option>
+        <option>
+          <name>GRuntimeLibSelectSlave</name>
+          <version>0</version>
+          <state>2</state>
+        </option>
+        <option>
+          <name>RTDescription</name>
+          <state>Use the full configuration of the C/C++ runtime library. Full locale interface, C locale, file descriptor support, multibytes in printf and scanf, and hex floats in strtod.</state>
+        </option>
+        <option>
+          <name>OGProductVersion</name>
+          <state>6.10.3.52260</state>
+        </option>
+        <option>
+          <name>OGLastSavedByProductVersion</name>
+          <state>7.20.2.7418</state>
+        </option>
+        <option>
+          <name>GeneralEnableMisra</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GeneralMisraVerbose</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>OGChipSelectEditMenu</name>
+          <state>nrf52832_xxaa	nRF52832_xxAA</state>
+        </option>
+        <option>
+          <name>GenLowLevelInterface</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GEndianModeBE</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OGBufferedTerminalOutput</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GenStdoutInterface</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GeneralMisraRules98</name>
+          <version>0</version>
+          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
+        </option>
+        <option>
+          <name>GeneralMisraVer</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GeneralMisraRules04</name>
+          <version>0</version>
+          <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
+        </option>
+        <option>
+          <name>RTConfigPath2</name>
+          <state>$TOOLKIT_DIR$\INC\c\DLib_Config_Full.h</state>
+        </option>
+        <option>
+          <name>GFPUCoreSlave</name>
+          <version>20</version>
+          <state>39</state>
+        </option>
+        <option>
+          <name>GBECoreSlave</name>
+          <version>20</version>
+          <state>39</state>
+        </option>
+        <option>
+          <name>OGUseCmsis</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>OGUseCmsisDspLib</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GRuntimeLibThreads</name>
+          <state>0</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>ICCARM</name>
+      <archiveVersion>2</archiveVersion>
+      <data>
+        <version>31</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>CCGuardCalls</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCOptimizationNoSizeConstraints</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCDefines</name>
+          <state>APP_SCHEDULER_ENABLED=1</state>
+          <state>ARM_MATH_CM4</state>
+          <state>BLE_STACK_SUPPORT_REQD</state>
+          <state>CONFIG_BOARD_NRF52832_PCA20023</state>
+          <state>DISABLE_FLOAT_API</state>
+          <state>ENABLE_ASSERTIONS</state>
+          <state>FIXED_POINT</state>
+          <state>FLOAT_ABI_HARD</state>
+          <state>HAL_NFC_ENGINEERING_BC_FTPAN_WORKAROUND</state>
+          <state>HAVE_LRINT</state>
+          <state>HAVE_LRINTF</state>
+          <state>NRF52</state>
+          <state>NRF52832_XXAA</state>
+          <state>NRF_SD_BLE_API_VERSION=5</state>
+          <state>OPUS_ARM_ASM</state>
+          <state>OPUS_ARM_INLINE_ASM</state>
+          <state>OPUS_ARM_INLINE_EDSP</state>
+          <state>OPUS_ARM_INLINE_MEDIA</state>
+          <state>OPUS_ARM_MAY_HAVE_EDSP</state>
+          <state>OPUS_ARM_PRESUME_EDSP</state>
+          <state>OPUS_BUILD</state>
+          <state>S132</state>
+          <state>SOFTDEVICE_PRESENT</state>
+          <state>SWI_DISABLE0</state>
+          <state>USE_APP_CONFIG</state>
+          <state>VAR_ARRAYS</state>
+        </option>
+        <option>
+          <name>CCPreprocFile</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCPreprocComments</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCPreprocLine</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListCFile</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListCMnemonics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListCMessages</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListAssFile</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListAssSource</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCEnableRemarks</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCDiagSuppress</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCDiagRemark</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCDiagWarning</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCDiagError</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCObjPrefix</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCAllowList</name>
+          <version>1</version>
+          <state>11111110</state>
+        </option>
+        <option>
+          <name>CCDebugInfo</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IEndianMode</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IProcessor</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IExtraOptionsCheck</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IExtraOptions</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCLangConformance</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCSignedPlainChar</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCRequirePrototypes</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCMultibyteSupport</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCDiagWarnAreErr</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCCompilerRuntimeInfo</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IFpuProcessor</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OutputFile</name>
+          <state>$FILE_BNAME$.o</state>
+        </option>
+        <option>
+          <name>CCLibConfigHeader</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>PreInclude</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CompilerMisraOverride</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCIncludePath2</name>
+          <state>$PROJ_DIR$\..\..\..\Source\Bootloader</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Common</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Configuration</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Debug</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Drivers</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\include</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Modules</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_bas</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_dis</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_hids</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_ias</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_nus</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\nrf_ble_gatt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\device</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ble_flash</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\clock</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\delay</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\gpiote</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\hal</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pdm</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ppi</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pwm</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\rng</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\saadc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\twi_master</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\wdt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_fifo</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\balloc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\ble_uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\rtt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc16</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc32</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\cc310_lib</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\micro_ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\nrf_crypto_sw</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log\src</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_memobj</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_mpu</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_ringbuf</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_section_vars</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_stack_guard</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_task_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fds</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fstorage</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\gpiote</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault\nrf52</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mem_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mutex</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\pwr_mgmt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\queue</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\sha256</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\strerror</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\svc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\timer</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\twi_mngr</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ac_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_oob_advdata</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_pair_msg</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ep_oob_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\hs_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\le_oob_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\message</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\record</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\text</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib\hal_t2t</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s132\headers</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s132\headers\nrf52</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain\cmsis\include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\micro-ecc\micro-ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\nrf_cc310\include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt</state>
+          <state>$PROJ_DIR$\..\config</state>
+        </option>
+        <option>
+          <name>CCStdIncCheck</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCCodeSection</name>
+          <state>.text</state>
+        </option>
+        <option>
+          <name>IInterwork2</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IProcessorMode2</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCOptLevel</name>
+          <state>3</state>
+        </option>
+        <option>
+          <name>CCOptStrategy</name>
+          <version>0</version>
+          <state>2</state>
+        </option>
+        <option>
+          <name>CCOptLevelSlave</name>
+          <state>3</state>
+        </option>
+        <option>
+          <name>CompilerMisraRules98</name>
+          <version>0</version>
+          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
+        </option>
+        <option>
+          <name>CompilerMisraRules04</name>
+          <version>0</version>
+          <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
+        </option>
+        <option>
+          <name>CCPosIndRopi</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCPosIndRwpi</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCPosIndNoDynInit</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccLang</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccCDialect</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccAllowVLA</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccCppDialect</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccExceptions</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccRTTI</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccStaticDestr</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccCppInlineSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccCmsis</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccFloatSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCNoLiteralPool</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCOptStrategySlave</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>AARM</name>
+      <archiveVersion>2</archiveVersion>
+      <data>
+        <version>9</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>AObjPrefix</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>AEndian</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>ACaseSensitivity</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>MacroChars</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AWarnEnable</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AWarnWhat</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AWarnOne</name>
+          <state></state>
+        </option>
+        <option>
+          <name>AWarnRange1</name>
+          <state></state>
+        </option>
+        <option>
+          <name>AWarnRange2</name>
+          <state></state>
+        </option>
+        <option>
+          <name>ADebug</name>
+          <state></state>
+        </option>
+        <option>
+          <name>AltRegisterNames</name>
+          <state>0</state>
+        </option>
+        <option>
+      <name>ADefines</name>
+          <state>APP_SCHEDULER_ENABLED=1</state>
+          <state>ARM_MATH_CM4</state>
+          <state>BLE_STACK_SUPPORT_REQD</state>
+          <state>CONFIG_BOARD_NRF52832_PCA20023</state>
+          <state>DISABLE_FLOAT_API</state>
+          <state>ENABLE_ASSERTIONS</state>
+          <state>FIXED_POINT</state>
+          <state>FLOAT_ABI_HARD</state>
+          <state>HAL_NFC_ENGINEERING_BC_FTPAN_WORKAROUND</state>
+          <state>HAVE_LRINT</state>
+          <state>HAVE_LRINTF</state>
+          <state>NRF52</state>
+          <state>NRF52832_XXAA</state>
+          <state>NRF_SD_BLE_API_VERSION=5</state>
+          <state>OPUS_ARM_ASM</state>
+          <state>OPUS_ARM_INLINE_ASM</state>
+          <state>OPUS_ARM_INLINE_EDSP</state>
+          <state>OPUS_ARM_INLINE_MEDIA</state>
+          <state>OPUS_ARM_MAY_HAVE_EDSP</state>
+          <state>OPUS_ARM_PRESUME_EDSP</state>
+          <state>OPUS_BUILD</state>
+          <state>S132</state>
+          <state>SOFTDEVICE_PRESENT</state>
+          <state>SWI_DISABLE0</state>
+          <state>USE_APP_CONFIG</state>
+          <state>VAR_ARRAYS</state>
+        </option>
+        <option>
+          <name>AList</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AListHeader</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>AListing</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>Includes</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>MacDefs</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>MacExps</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>MacExec</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>OnlyAssed</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>MultiLine</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>PageLengthCheck</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>PageLength</name>
+          <state>80</state>
+        </option>
+        <option>
+          <name>TabSpacing</name>
+          <state>8</state>
+        </option>
+        <option>
+          <name>AXRef</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AXRefDefines</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AXRefInternal</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AXRefDual</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AProcessor</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>AFpuProcessor</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>AOutputFile</name>
+          <state>$FILE_BNAME$.o</state>
+        </option>
+        <option>
+          <name>AMultibyteSupport</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>ALimitErrorsCheck</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>ALimitErrorsEdit</name>
+          <state>100</state>
+        </option>
+        <option>
+          <name>AIgnoreStdInclude</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AUserIncludes</name>
+          <state>$PROJ_DIR$\..\..\..\Source\Bootloader</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Common</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Configuration</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Debug</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Drivers</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\include</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Modules</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_bas</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_dis</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_hids</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_ias</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_nus</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\nrf_ble_gatt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\device</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ble_flash</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\clock</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\delay</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\gpiote</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\hal</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pdm</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ppi</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pwm</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\rng</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\saadc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\twi_master</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\wdt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_fifo</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\balloc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\ble_uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\rtt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc16</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc32</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\cc310_lib</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\micro_ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\nrf_crypto_sw</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log\src</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_memobj</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_mpu</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_ringbuf</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_section_vars</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_stack_guard</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_task_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fds</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fstorage</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\gpiote</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault\nrf52</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mem_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mutex</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\pwr_mgmt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\queue</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\sha256</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\strerror</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\svc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\timer</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\twi_mngr</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ac_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_oob_advdata</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_pair_msg</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ep_oob_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\hs_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\le_oob_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\message</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\record</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\text</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib\hal_t2t</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s132\headers</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s132\headers\nrf52</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain\cmsis\include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\micro-ecc\micro-ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\nrf_cc310\include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt</state>
+          <state>$PROJ_DIR$\..\config</state>
+        </option>
+        <option>
+          <name>AExtraOptionsCheckV2</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AExtraOptionsV2</name>
+          <state></state>
+        </option>
+        <option>
+          <name>AsmNoLiteralPool</name>
+          <state>0</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>OBJCOPY</name>
+      <archiveVersion>0</archiveVersion>
+      <data>
+        <version>1</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>OOCOutputFormat</name>
+          <version>2</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OCOutputOverride</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OOCOutputFile</name>
+          <state>PCA20023-SR3_nRF52832_Product_Example.hex</state>
+        </option>
+        <option>
+          <name>OOCCommandLineProducer</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OOCObjCopyEnable</name>
+          <state>1</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>CUSTOM</name>
+      <archiveVersion>3</archiveVersion>
+      <data>
+        <extensions></extensions>
+        <cmdline></cmdline>
+      </data>
+    </settings>
+    <settings>
+      <name>BICOMP</name>
+      <archiveVersion>0</archiveVersion>
+      <data/>
+    </settings>
+    <settings>
+      <name>BUILDACTION</name>
+      <archiveVersion>1</archiveVersion>
+      <data>
+        <prebuild></prebuild>
+        <postbuild></postbuild>
+      </data>
+    </settings>
+    <settings>
+      <name>ILINK</name>
+      <archiveVersion>0</archiveVersion>
+      <data>
+        <version>16</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>IlinkLibIOConfig</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>XLinkMisraHandler</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkInputFileSlave</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkOutputFile</name>
+          <state>Smart_Remote_3_nRF52_Firmware_nRF52832.out</state>
+        </option>
+        <option>
+          <name>IlinkDebugInfoEnable</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkKeepSymbols</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinaryFile</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinarySymbol</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinarySegment</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinaryAlign</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkDefines</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkConfigDefines</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkMapFile</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkLogFile</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogInitialization</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogModule</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogSection</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogVeneer</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkIcfOverride</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkIcfFile</name>
+      <state>$PROJ_DIR$\Smart_Remote_3_nRF52_iar_nRF5x.icf</state>
+        </option>
+        <option>
+          <name>IlinkIcfFileSlave</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkEnableRemarks</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkSuppressDiags</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkTreatAsRem</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkTreatAsWarn</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkTreatAsErr</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkWarningsAreErrors</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkUseExtraOptions</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkExtraOptions</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkLowLevelInterfaceSlave</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkAutoLibEnable</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkAdditionalLibs</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkOverrideProgramEntryLabel</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkProgramEntryLabelSelect</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkProgramEntryLabel</name>
+          <state>__iar_program_start</state>
+        </option>
+        <option>
+          <name>DoFill</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>FillerByte</name>
+          <state>0xFF</state>
+        </option>
+        <option>
+          <name>FillerStart</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>FillerEnd</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>CrcSize</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcAlign</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcPoly</name>
+          <state>0x11021</state>
+        </option>
+        <option>
+          <name>CrcCompl</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CrcBitOrder</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CrcInitialValue</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>DoCrc</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkBE8Slave</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkBufferedTerminalOutput</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkStdoutInterfaceSlave</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcFullSize</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkIElfToolPostProcess</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogAutoLibSelect</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogRedirSymbols</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogUnusedFragments</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkCrcReverseByteOrder</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkCrcUseAsInput</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptInline</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptExceptionsAllow</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptExceptionsForce</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkCmsis</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptMergeDuplSections</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkOptUseVfe</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptForceVfe</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkStackAnalysisEnable</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkStackControlFile</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkStackCallGraphFile</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CrcAlgorithm</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcUnitSize</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkThreadsSlave</name>
+          <state>1</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>IARCHIVE</name>
+      <archiveVersion>0</archiveVersion>
+      <data>
+        <version>0</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>IarchiveInputs</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IarchiveOverride</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IarchiveOutput</name>
+          <state>###Unitialized###</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>BILINK</name>
+      <archiveVersion>0</archiveVersion>
+      <data/>
+    </settings>
+  </configuration>  <configuration>
+    <name>CUSTOM-SR3_nRF52832_Custom_Board</name>
+    <toolchain>
+      <name>ARM</name>
+    </toolchain>
+    <debug>0</debug>
+    <settings>
+      <name>General</name>
+      <archiveVersion>3</archiveVersion>
+      <data>
+        <version>22</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>ExePath</name>
+          <state>_build</state>
+        </option>
+        <option>
+          <name>ObjPath</name>
+          <state>_build</state>
+        </option>
+        <option>
+          <name>ListPath</name>
+          <state>_build</state>
+        </option>
+        <option>
+          <name>Variant</name>
+          <version>20</version>
+          <state>34</state>
+        </option>
+        <option>
+          <name>GEndianMode</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>Input variant</name>
+          <version>3</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>Input description</name>
+          <state>Full formatting.</state>
+        </option>
+        <option>
+          <name>Output variant</name>
+          <version>2</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>Output description</name>
+          <state>Full formatting.</state>
+        </option>
+        <option>
+          <name>GOutputBinary</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>FPU</name>
+          <version>2</version>
+          <state>5</state>
+        </option>
+        <option>
+          <name>OGCoreOrChip</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>GRuntimeLibSelect</name>
+          <version>0</version>
+          <state>2</state>
+        </option>
+        <option>
+          <name>GRuntimeLibSelectSlave</name>
+          <version>0</version>
+          <state>2</state>
+        </option>
+        <option>
+          <name>RTDescription</name>
+          <state>Use the full configuration of the C/C++ runtime library. Full locale interface, C locale, file descriptor support, multibytes in printf and scanf, and hex floats in strtod.</state>
+        </option>
+        <option>
+          <name>OGProductVersion</name>
+          <state>6.10.3.52260</state>
+        </option>
+        <option>
+          <name>OGLastSavedByProductVersion</name>
+          <state>7.20.2.7418</state>
+        </option>
+        <option>
+          <name>GeneralEnableMisra</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GeneralMisraVerbose</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>OGChipSelectEditMenu</name>
+          <state>nrf52832_xxaa	nRF52832_xxAA</state>
+        </option>
+        <option>
+          <name>GenLowLevelInterface</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GEndianModeBE</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OGBufferedTerminalOutput</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GenStdoutInterface</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GeneralMisraRules98</name>
+          <version>0</version>
+          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
+        </option>
+        <option>
+          <name>GeneralMisraVer</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GeneralMisraRules04</name>
+          <version>0</version>
+          <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
+        </option>
+        <option>
+          <name>RTConfigPath2</name>
+          <state>$TOOLKIT_DIR$\INC\c\DLib_Config_Full.h</state>
+        </option>
+        <option>
+          <name>GFPUCoreSlave</name>
+          <version>20</version>
+          <state>39</state>
+        </option>
+        <option>
+          <name>GBECoreSlave</name>
+          <version>20</version>
+          <state>39</state>
+        </option>
+        <option>
+          <name>OGUseCmsis</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>OGUseCmsisDspLib</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GRuntimeLibThreads</name>
+          <state>0</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>ICCARM</name>
+      <archiveVersion>2</archiveVersion>
+      <data>
+        <version>31</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>CCGuardCalls</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCOptimizationNoSizeConstraints</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCDefines</name>
+          <state>APP_SCHEDULER_ENABLED=1</state>
+          <state>ARM_MATH_CM4</state>
+          <state>BLE_STACK_SUPPORT_REQD</state>
+          <state>CONFIG_BOARD_NRF52832_CUSTOM</state>
+          <state>DISABLE_FLOAT_API</state>
+          <state>ENABLE_ASSERTIONS</state>
+          <state>FIXED_POINT</state>
+          <state>FLOAT_ABI_HARD</state>
+          <state>HAL_NFC_ENGINEERING_BC_FTPAN_WORKAROUND</state>
+          <state>HAVE_LRINT</state>
+          <state>HAVE_LRINTF</state>
+          <state>NRF52</state>
+          <state>NRF52832_XXAA</state>
+          <state>NRF_SD_BLE_API_VERSION=5</state>
+          <state>OPUS_ARM_ASM</state>
+          <state>OPUS_ARM_INLINE_ASM</state>
+          <state>OPUS_ARM_INLINE_EDSP</state>
+          <state>OPUS_ARM_INLINE_MEDIA</state>
+          <state>OPUS_ARM_MAY_HAVE_EDSP</state>
+          <state>OPUS_ARM_PRESUME_EDSP</state>
+          <state>OPUS_BUILD</state>
+          <state>S132</state>
+          <state>SOFTDEVICE_PRESENT</state>
+          <state>SWI_DISABLE0</state>
+          <state>USE_APP_CONFIG</state>
+          <state>VAR_ARRAYS</state>
+        </option>
+        <option>
+          <name>CCPreprocFile</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCPreprocComments</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCPreprocLine</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListCFile</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListCMnemonics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListCMessages</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListAssFile</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCListAssSource</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCEnableRemarks</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCDiagSuppress</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCDiagRemark</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCDiagWarning</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCDiagError</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCObjPrefix</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCAllowList</name>
+          <version>1</version>
+          <state>11111110</state>
+        </option>
+        <option>
+          <name>CCDebugInfo</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IEndianMode</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IProcessor</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IExtraOptionsCheck</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IExtraOptions</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CCLangConformance</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCSignedPlainChar</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCRequirePrototypes</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCMultibyteSupport</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCDiagWarnAreErr</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCCompilerRuntimeInfo</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IFpuProcessor</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OutputFile</name>
+          <state>$FILE_BNAME$.o</state>
+        </option>
+        <option>
+          <name>CCLibConfigHeader</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>PreInclude</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CompilerMisraOverride</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCIncludePath2</name>
+          <state>$PROJ_DIR$\..\..\..\Source\Bootloader</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Common</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Configuration</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Debug</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Drivers</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\include</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Modules</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_bas</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_dis</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_hids</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_ias</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_nus</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\nrf_ble_gatt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\device</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ble_flash</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\clock</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\delay</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\gpiote</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\hal</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pdm</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ppi</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pwm</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\rng</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\saadc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\twi_master</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\wdt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_fifo</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\balloc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\ble_uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\rtt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc16</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc32</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\cc310_lib</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\micro_ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\nrf_crypto_sw</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log\src</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_memobj</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_mpu</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_ringbuf</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_section_vars</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_stack_guard</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_task_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fds</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fstorage</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\gpiote</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault\nrf52</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mem_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mutex</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\pwr_mgmt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\queue</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\sha256</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\strerror</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\svc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\timer</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\twi_mngr</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ac_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_oob_advdata</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_pair_msg</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ep_oob_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\hs_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\le_oob_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\message</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\record</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\text</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib\hal_t2t</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s132\headers</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s132\headers\nrf52</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain\cmsis\include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\micro-ecc\micro-ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\nrf_cc310\include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt</state>
+          <state>$PROJ_DIR$\..\config</state>
+        </option>
+        <option>
+          <name>CCStdIncCheck</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCCodeSection</name>
+          <state>.text</state>
+        </option>
+        <option>
+          <name>IInterwork2</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IProcessorMode2</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCOptLevel</name>
+          <state>3</state>
+        </option>
+        <option>
+          <name>CCOptStrategy</name>
+          <version>0</version>
+          <state>2</state>
+        </option>
+        <option>
+          <name>CCOptLevelSlave</name>
+          <state>3</state>
+        </option>
+        <option>
+          <name>CompilerMisraRules98</name>
+          <version>0</version>
+          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
+        </option>
+        <option>
+          <name>CompilerMisraRules04</name>
+          <version>0</version>
+          <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
+        </option>
+        <option>
+          <name>CCPosIndRopi</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCPosIndRwpi</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCPosIndNoDynInit</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccLang</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccCDialect</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccAllowVLA</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccCppDialect</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccExceptions</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccRTTI</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccStaticDestr</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccCppInlineSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccCmsis</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccFloatSemantics</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCNoLiteralPool</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCOptStrategySlave</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>AARM</name>
+      <archiveVersion>2</archiveVersion>
+      <data>
+        <version>9</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>AObjPrefix</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>AEndian</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>ACaseSensitivity</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>MacroChars</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AWarnEnable</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AWarnWhat</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AWarnOne</name>
+          <state></state>
+        </option>
+        <option>
+          <name>AWarnRange1</name>
+          <state></state>
+        </option>
+        <option>
+          <name>AWarnRange2</name>
+          <state></state>
+        </option>
+        <option>
+          <name>ADebug</name>
+          <state></state>
+        </option>
+        <option>
+          <name>AltRegisterNames</name>
+          <state>0</state>
+        </option>
+        <option>
+      <name>ADefines</name>
+          <state>APP_SCHEDULER_ENABLED=1</state>
+          <state>ARM_MATH_CM4</state>
+          <state>BLE_STACK_SUPPORT_REQD</state>
+          <state>CONFIG_BOARD_NRF52832_CUSTOM</state>
+          <state>DISABLE_FLOAT_API</state>
+          <state>ENABLE_ASSERTIONS</state>
+          <state>FIXED_POINT</state>
+          <state>FLOAT_ABI_HARD</state>
+          <state>HAL_NFC_ENGINEERING_BC_FTPAN_WORKAROUND</state>
+          <state>HAVE_LRINT</state>
+          <state>HAVE_LRINTF</state>
+          <state>NRF52</state>
+          <state>NRF52832_XXAA</state>
+          <state>NRF_SD_BLE_API_VERSION=5</state>
+          <state>OPUS_ARM_ASM</state>
+          <state>OPUS_ARM_INLINE_ASM</state>
+          <state>OPUS_ARM_INLINE_EDSP</state>
+          <state>OPUS_ARM_INLINE_MEDIA</state>
+          <state>OPUS_ARM_MAY_HAVE_EDSP</state>
+          <state>OPUS_ARM_PRESUME_EDSP</state>
+          <state>OPUS_BUILD</state>
+          <state>S132</state>
+          <state>SOFTDEVICE_PRESENT</state>
+          <state>SWI_DISABLE0</state>
+          <state>USE_APP_CONFIG</state>
+          <state>VAR_ARRAYS</state>
+        </option>
+        <option>
+          <name>AList</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AListHeader</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>AListing</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>Includes</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>MacDefs</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>MacExps</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>MacExec</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>OnlyAssed</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>MultiLine</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>PageLengthCheck</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>PageLength</name>
+          <state>80</state>
+        </option>
+        <option>
+          <name>TabSpacing</name>
+          <state>8</state>
+        </option>
+        <option>
+          <name>AXRef</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AXRefDefines</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AXRefInternal</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AXRefDual</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AProcessor</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>AFpuProcessor</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>AOutputFile</name>
+          <state>$FILE_BNAME$.o</state>
+        </option>
+        <option>
+          <name>AMultibyteSupport</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>ALimitErrorsCheck</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>ALimitErrorsEdit</name>
+          <state>100</state>
+        </option>
+        <option>
+          <name>AIgnoreStdInclude</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AUserIncludes</name>
+          <state>$PROJ_DIR$\..\..\..\Source\Bootloader</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Common</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Configuration</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Debug</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Drivers</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\include</state>
+          <state>$PROJ_DIR$\..\..\..\Source\Modules</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_bas</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_dis</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_hids</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_ias</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_nus</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\nrf_ble_gatt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\device</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ble_flash</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\clock</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\delay</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\gpiote</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\hal</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pdm</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ppi</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pwm</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\rng</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\saadc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\twi_master</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\wdt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_fifo</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\balloc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\ble_uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\rtt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\uart</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc16</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc32</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\cc310_lib</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\micro_ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\nrf_crypto_sw</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log\src</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_memobj</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_mpu</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_ringbuf</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_section_vars</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_stack_guard</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_task_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fds</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fstorage</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\gpiote</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault\nrf52</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mem_manager</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mutex</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\pwr_mgmt</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\queue</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\sha256</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\strerror</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\svc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\timer</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\twi_mngr</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ac_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_oob_advdata</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_pair_msg</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ep_oob_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\hs_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\le_oob_rec</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\message</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\record</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\text</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib\hal_t2t</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s132\headers</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\s132\headers\nrf52</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain\cmsis\include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\micro-ecc\micro-ecc</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\nrf_cc310\include</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt</state>
+          <state>$PROJ_DIR$\..\config</state>
+        </option>
+        <option>
+          <name>AExtraOptionsCheckV2</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AExtraOptionsV2</name>
+          <state></state>
+        </option>
+        <option>
+          <name>AsmNoLiteralPool</name>
+          <state>0</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>OBJCOPY</name>
+      <archiveVersion>0</archiveVersion>
+      <data>
+        <version>1</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>OOCOutputFormat</name>
+          <version>2</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OCOutputOverride</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OOCOutputFile</name>
+          <state>CUSTOM-SR3_nRF52832_Custom_Board.hex</state>
+        </option>
+        <option>
+          <name>OOCCommandLineProducer</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>OOCObjCopyEnable</name>
+          <state>1</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>CUSTOM</name>
+      <archiveVersion>3</archiveVersion>
+      <data>
+        <extensions></extensions>
+        <cmdline></cmdline>
+      </data>
+    </settings>
+    <settings>
+      <name>BICOMP</name>
+      <archiveVersion>0</archiveVersion>
+      <data/>
+    </settings>
+    <settings>
+      <name>BUILDACTION</name>
+      <archiveVersion>1</archiveVersion>
+      <data>
+        <prebuild></prebuild>
+        <postbuild></postbuild>
+      </data>
+    </settings>
+    <settings>
+      <name>ILINK</name>
+      <archiveVersion>0</archiveVersion>
+      <data>
+        <version>16</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>IlinkLibIOConfig</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>XLinkMisraHandler</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkInputFileSlave</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkOutputFile</name>
+          <state>Smart_Remote_3_nRF52_Firmware_nRF52832.out</state>
+        </option>
+        <option>
+          <name>IlinkDebugInfoEnable</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkKeepSymbols</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinaryFile</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinarySymbol</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinarySegment</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinaryAlign</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkDefines</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkConfigDefines</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkMapFile</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkLogFile</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogInitialization</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogModule</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogSection</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogVeneer</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkIcfOverride</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkIcfFile</name>
+      <state>$PROJ_DIR$\Smart_Remote_3_nRF52_iar_nRF5x.icf</state>
+        </option>
+        <option>
+          <name>IlinkIcfFileSlave</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkEnableRemarks</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkSuppressDiags</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkTreatAsRem</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkTreatAsWarn</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkTreatAsErr</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkWarningsAreErrors</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkUseExtraOptions</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkExtraOptions</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkLowLevelInterfaceSlave</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkAutoLibEnable</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkAdditionalLibs</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkOverrideProgramEntryLabel</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkProgramEntryLabelSelect</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkProgramEntryLabel</name>
+          <state>__iar_program_start</state>
+        </option>
+        <option>
+          <name>DoFill</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>FillerByte</name>
+          <state>0xFF</state>
+        </option>
+        <option>
+          <name>FillerStart</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>FillerEnd</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>CrcSize</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcAlign</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcPoly</name>
+          <state>0x11021</state>
+        </option>
+        <option>
+          <name>CrcCompl</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CrcBitOrder</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CrcInitialValue</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>DoCrc</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkBE8Slave</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkBufferedTerminalOutput</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkStdoutInterfaceSlave</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcFullSize</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkIElfToolPostProcess</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogAutoLibSelect</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogRedirSymbols</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkLogUnusedFragments</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkCrcReverseByteOrder</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkCrcUseAsInput</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptInline</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptExceptionsAllow</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptExceptionsForce</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkCmsis</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptMergeDuplSections</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkOptUseVfe</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkOptForceVfe</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkStackAnalysisEnable</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkStackControlFile</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkStackCallGraphFile</name>
+          <state></state>
+        </option>
+        <option>
+          <name>CrcAlgorithm</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcUnitSize</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkThreadsSlave</name>
+          <state>1</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>IARCHIVE</name>
+      <archiveVersion>0</archiveVersion>
+      <data>
+        <version>0</version>
+        <wantNonLocal>1</wantNonLocal>
+        <debug>0</debug>
+        <option>
+          <name>IarchiveInputs</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IarchiveOverride</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IarchiveOutput</name>
+          <state>###Unitialized###</state>
+        </option>
+      </data>
+    </settings>
+    <settings>
+      <name>BILINK</name>
+      <archiveVersion>0</archiveVersion>
+      <data/>
+    </settings>
+  </configuration>  <group>
+  <name>Drivers</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_acc_bma222e.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_acc_lis3dh.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_audio_anr.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_audio_codec_adpcm.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_audio_codec_bv32fp.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_audio_codec_opus.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_audio_codec_sbc.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_audio_dsp.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_audio_pdm.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_board.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_buzzer.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_gyro_icm20608.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_ir_nec.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_ir_sirc.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_keyboard_matrix.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_keyboard_sx1509.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_leds_gpio.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Drivers\drv_touchpad_synaptics.c</name>    </file>  </group>  <group>
+  <name>nRF_Drivers</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ble_flash\ble_flash.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\clock\nrf_drv_clock.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pdm\nrf_drv_pdm.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\ppi\nrf_drv_ppi.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\pwm\nrf_drv_pwm.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\rng\nrf_drv_rng.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\saadc\nrf_drv_saadc.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\twi_master\nrf_drv_twi.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\uart\nrf_drv_uart.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\wdt\nrf_drv_wdt.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\drivers_nrf\hal\nrf_saadc.c</name>    </file>  </group>  <group>
+  <name>Libraries</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\JLINK_MONITOR_ISR_IAR.s</name>    </file>  </group>  <group>
+  <name>Application</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\main.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\config\sdk_config.h</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Configuration\sr3_config.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Configuration\sr3_config_nrf52832_custom.h</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Configuration\sr3_config_nrf52832_pca20023.h</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Configuration\sr3_config_nrf52832_pca63519.h</name>    </file>  </group>  <group>
+  <name>Codec: ADPCM</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\dvi_adpcm.c</name>    </file>  </group>  <group>
+  <name>nRF_BLE_Services</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_bas\ble_bas.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_dis\ble_dis.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_hids\ble_hids.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_ias\ble_ias.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\ble_services\ble_nus\ble_nus.c</name>    </file>  </group>  <group>
+  <name>Codec: BV32FP</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\a2lsp.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\allpole.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\allzero.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\autocor.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\bitpack.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\bvplc.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\cmtables.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\coarptch.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\decoder.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\encoder.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\excdec.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\excquan.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\fineptch.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\gaindec.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\gainquan.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\levdur.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\levelest.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\lsp2a.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\lspdec.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\lspquan.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\ptdec.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\ptquan.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\stblchck.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\stblzlsp.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\tables.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\bv32fp-1.2\utility.c</name>    </file>  </group>  <group>
+  <name>nRF_micro-ecc</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\external\micro-ecc\nrf52hf_iar\armgcc\micro_ecc_lib_nrf52.a</name>    </file>  </group>  <group>
+  <name>nRF_Segger_RTT</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT_Syscalls_IAR.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\external\segger_rtt\SEGGER_RTT_printf.c</name>    </file>  </group>  <group>
+  <name>Device</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain\iar\iar_startup_nrf52.s</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\toolchain\system_nrf52.c</name>    </file>  </group>  <group>
+  <name>Modules</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\event_bus.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_acc.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_audio.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_audio_frame.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Debug\m_audio_gauges.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Debug\m_audio_probe.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_batt_meas.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_buzzer.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_coms.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_coms_ble.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_coms_ble_addr.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_coms_ble_adv.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_coms_ble_atvv.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_coms_ble_atvv_srv.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_coms_ble_dfu.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_coms_ble_hid.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_coms_ble_lesc.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_gyro.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_init.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_ir_tx.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_keyboard.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_leds.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_nfc.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_protocol_hid.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_protocol_hid_state.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_protocol_ir.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_system_state.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Modules\m_touchpad.c</name>    </file>  </group>  <group>
+  <name>nRF_BLE</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_advdata.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_conn_params.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_conn_state.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\common\ble_srv_common.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager\gatt_cache_manager.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager\gatts_cache_manager.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager\id_manager.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\nrf_ble_gatt\nrf_ble_gatt.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager\peer_data_storage.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager\peer_database.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager\peer_id.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager\peer_manager.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager\pm_buffer.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager\pm_mutex.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager\security_dispatcher.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\ble\peer_manager\security_manager.c</name>    </file>  </group>  <group>
+  <name>Common</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Common\app_error_handler.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Common\app_isched.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Common\app_scheduler.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Common\key_combo_util.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Common\rng_monitor.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Common\twi_common.c</name>    </file>  </group>  <group>
+  <name>Debug</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Debug\app_debug_pin.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Debug\stack_profiler_iar.s</name>    </file>  </group>  <group>
+  <name>nRF_NFC</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib\hal_t2t\hal_nfc_t2t.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ac_rec\nfc_ac_rec.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_oob_advdata\nfc_ble_oob_advdata.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\common\nfc_ble_pair_common.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ble_pair_msg\nfc_ble_pair_msg.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\ep_oob_rec\nfc_ep_oob_rec.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\hs_rec\nfc_hs_rec.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\connection_handover\le_oob_rec\nfc_le_oob_rec.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\message\nfc_ndef_msg.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\generic\record\nfc_ndef_record.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\t2t_lib\nfc_t2t_lib_iar.a</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\nfc\ndef\text\nfc_text_rec.c</name>    </file>  </group>  <group>
+  <name>nRF_SoftDevice</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common\nrf_sdh.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common\nrf_sdh_ble.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\softdevice\common\nrf_sdh_soc.c</name>    </file>  </group>  <group>
+  <name>nRF_Crypto backends</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\cc310_lib\cc310_lib_ecdh.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\cc310_lib\cc310_lib_ecdsa.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\cc310_lib\cc310_lib_hash.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\cc310_lib\cc310_lib_init.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\cc310_lib\cc310_lib_keys.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\cc310_lib\cc310_lib_rng.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\cc310_lib\cc310_lib_shared.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\micro_ecc\micro_ecc_lib_ecdh.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\micro_ecc\micro_ecc_lib_ecdsa.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\micro_ecc\micro_ecc_lib_init.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\micro_ecc\micro_ecc_lib_keys.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\micro_ecc\micro_ecc_lib_shared.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\nrf_crypto_sw\nrf_crypto_sw_hash.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\backend\nrf_crypto_sw\nrf_crypto_sw_rng.c</name>    </file>  </group>  <group>
+  <name>Codec: SBC</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\srce\sbc_analysis.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\srce\sbc_dct.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\srce\sbc_dct_coeffs.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\srce\sbc_enc_bit_alloc_mono.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\srce\sbc_enc_bit_alloc_ste.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\srce\sbc_enc_coeffs.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\srce\sbc_encoder.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\sbc-0025\srce\sbc_packing.c</name>    </file>  </group>  <group>
+  <name>nRF_Log</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_rtt.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_serial.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_backend_uart.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_frontend.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_log\src\nrf_log_str_formatter.c</name>    </file>  </group>  <group>
+  <name>nRF_Core</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_mpu\nrf_mpu.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_stack_guard\nrf_stack_guard.c</name>    </file>  </group>  <group>
+  <name>Codec: OPUS</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\A2NLSF.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\CNG.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\HP_variable_cutoff.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\LPC_analysis_filter.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\LPC_fit.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\LPC_inv_pred_gain.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\LP_variable_cutoff.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\LTP_analysis_filter_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\LTP_scale_ctrl_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\NLSF2A.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\NLSF_VQ.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\NLSF_VQ_weights_laroia.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\NLSF_decode.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\NLSF_del_dec_quant.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\NLSF_encode.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\NLSF_stabilize.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\NLSF_unpack.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\NSQ.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\NSQ_del_dec.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\PLC.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\VAD.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\VQ_WMat_EC.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\ana_filt_bank_1.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\analysis.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\apply_sine_window_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\autocorr_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\bands.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\biquad_alt.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\burg_modified_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\bwexpander.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\bwexpander_32.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\celt.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\celt_decoder.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\celt_encoder.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\celt_lpc.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\arm\celt_pitch_xcorr_arm_iar.s</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\check_control_input.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\code_signs.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\control_SNR.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\control_audio_bandwidth.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\control_codec.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\corrMatrix_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\cwrs.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\debug.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\dec_API.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\decode_core.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\decode_frame.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\decode_indices.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\decode_parameters.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\decode_pitch.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\decode_pulses.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\decoder_set_fs.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\enc_API.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\encode_frame_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\encode_indices.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\encode_pulses.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\entcode.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\entdec.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\entenc.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\find_LPC_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\find_LTP_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\find_pitch_lags_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\find_pred_coefs_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\gain_quant.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\init_decoder.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\init_encoder.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\inner_prod_aligned.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\interpolate.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\k2a_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\k2a_Q16_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\kiss_fft.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\laplace.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\lin2log.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\log2lin.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\mathops.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\mdct.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\mlp.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\mlp_data.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\modes.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\noise_shape_analysis_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\opus.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\opus_decoder.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\opus_encoder.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\opus_multistream.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\opus_multistream_decoder.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\opus_multistream_encoder.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\pitch.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\pitch_analysis_core_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\pitch_est_tables.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\process_NLSFs.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\process_gains_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\quant_LTP_gains.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\quant_bands.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\rate.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\regularize_correlations_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\repacketizer.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\resampler.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\resampler_down2.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\resampler_down2_3.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\resampler_private_AR2.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\resampler_private_IIR_FIR.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\resampler_private_down_FIR.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\resampler_private_up2_HQ.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\resampler_rom.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\residual_energy16_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\residual_energy_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\schur64_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\schur_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\shell_coder.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\sigm_Q15.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\sort.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\stereo_LR_to_MS.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\stereo_MS_to_LR.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\stereo_decode_pred.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\stereo_encode_pred.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\stereo_find_predictor.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\stereo_quant_pred.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\sum_sqr_shift.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\table_LSF_cos.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\tables_LTP.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\tables_NLSF_CB_NB_MB.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\tables_NLSF_CB_WB.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\tables_gain.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\tables_other.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\tables_pitch_lag.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\tables_pulses_per_block.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\vector_ops_FIX.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\vq.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\Source\Libraries\opus-1.2.1\warped_autocorrelation_FIX.c</name>    </file>  </group>  <group>
+  <name>nRF_Libraries</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_error.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_error_weak.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\gpiote\app_gpiote.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\timer\app_timer.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\app_util_platform.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc16\crc16.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crc32\crc32.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\ecc\ecc.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fds\fds.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault\nrf52\handler\hardfault_handler_iar.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\hardfault\hardfault_implementation.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\mem_manager\mem_manager.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\nrf_assert.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\atomic_fifo\nrf_atfifo.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\balloc\nrf_balloc.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\nrf_cli.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\ble_uart\nrf_cli_ble_uart.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\rtt\nrf_cli_rtt.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\cli\uart\nrf_cli_uart.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf\nrf_fprintf.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\external\fprintf\nrf_fprintf_format.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fstorage\nrf_fstorage.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\fstorage\nrf_fstorage_sd.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_memobj\nrf_memobj.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\pwr_mgmt\nrf_pwr_mgmt.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\queue\nrf_queue.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_ringbuf\nrf_ringbuf.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_section_vars\nrf_section_iter.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\strerror\nrf_strerror.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\twi_mngr\nrf_twi_mngr.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\util\sdk_mapped_flags.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\sha256\sha256.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_task_manager\task_manager.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\experimental_task_manager\task_manager_core_iar.s</name>    </file>  </group>  <group>
+  <name>nRF_Crypto</name>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\nrf_crypto_ecdh.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\nrf_crypto_ecdsa.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\nrf_crypto_hash.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\nrf_crypto_init.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\nrf_crypto_keys.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\nrf_crypto_mem.c</name>    </file>    <file>
+    <name>$PROJ_DIR$\..\..\..\..\..\..\components\libraries\crypto\nrf_crypto_rng.c</name>    </file>  </group></project>
+
+

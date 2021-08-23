@@ -1,0 +1,122 @@
+/**
+@page RELEASE_NOTES Release notes
+
+<h2>nRFready Smart Remote 3 nRF52 Firmware Version 1.2.1</h2>
+
+<b>Built on nRF5 SDK v14.2.0</b>
+
+<h3>New features over v1.2</h3>
+- Audio
+ - ATVV service support
+  - Added support for v0.5
+  - Added pairing mode key chord: Home + Back (hold for 3 seconds)
+  - Added erase pairing key chord: Home + Back + D-pad up (hold for 3 seconds)
+
+- Other
+ - Updated custom configuration (CUSTOM-SR3_nRF52832_Custom_Board) to support SMK "RXT9000-72G1F" hardware
+ - Added accelerometer driver for BMA222E
+ - Added option for LED power control signal
+
+<h3>New features over v1.1</h3>
+- SoC
+ - Support for nRF52810
+ - Support for the S112 SoftDevice
+
+- <em>Bluetooth</em> Low Energy (BLE)
+ - Public Address support
+ - Ability to add Manufacturer Data to advertising packets
+ - Data Length Extension (DLE) support
+ - Large MTU support
+ - 2 Mbit/s PHY support
+ - PA/LNA interface
+
+- Audio
+ - ATVV service support
+ - New codecs
+  - SBC
+  - mSBC
+ - Additional sampling frequencies
+  - 8 kHz
+  - 16 kHz
+  - 24 kHz
+  - 32 kHz
+ - New tools
+  - Improved audio gauges (detailed statistics about resource usage)
+  - Audio Probe
+
+- Command Line Interface (CLI)
+ - Supported backends
+  - BLE
+  - RTT
+  - UART
+ - CLI integration with new logging infrastructure
+ - CLI integration with audio subsystem
+  - CLI commands for audio subsystem inspection
+  - CLI commands for audio subsystem reconfiguration at runtime
+
+- Advanced Logger:
+ - Per-module log level configuration (at runtime if CLI is used)
+ - Supported backends
+  - RTT
+  - UART
+  - BLE (if CLI is enabled)
+
+- Device Firmware Update
+ - Bond sharing support
+ - Stability updates
+
+- IR
+ - NEC IR protocol support
+
+- Other
+ - Combo keys handling infrastructure
+
+<h3>New features over v1.0</h3>
+
+- Device Firmware Update
+- LESC support
+- NFC tap-to-pair
+- Monitor Mode Debugging
+
+<h3>Improvements</h3>
+- General
+ - Reduced power consumption during system initialization
+ - Improved SoftDevice error handling
+ - Improved stack usage measurement infrastructure
+ - Improved battery level measurement (added SAADC calibration and measurement smoothing)
+ - Improved configuration infrastructure (only enabled features are compiled in)
+ - Improved directed advertising timeout management
+ - Improved Stack and Stack Guard management (reduces memory usage when Stack Guard is used)
+ - Improved documentation
+
+- HID
+ - Improved HID reports handling
+ - Improved compatibility with Microsoft Windows
+ - Reduced memory footprint
+
+- Opus
+ - Library version updated to 1.2.1
+ - Reduced memory consumption
+ - Reduced CPU usage
+ - Added support for higher bit rates
+
+<h3>Fixes</h3>
+- Stability fixes in HID module
+- Stability fixes in communication module
+- Stability fixes in gyro driver
+- Stability fixes in touchpad driver
+- Stability fixes in BLE advertising
+- Various fixes in audio module
+
+<h3>Known issues</h3>
+- Logger/CLI RTT backend may hang the device if debugger is connected but RTT communication is serviced by the host.
+- SoftDevice hard fault handler may hang if MemManage fault or BusFault error occurs on stacking for exception entry.
+
+
+@note
+- AirMotionLibrary from <a href="https://www.invensense.com/" target="_blank">InvenSense&reg; (a TDK company)</a>  is not included in the firmware release. The functionality is only provided as a precompiled HEX file. For a copy of the license, follow <a href="https://www.invensense.com/developers/software-downloads/#sla_content_34994" target="_blank">this link</a>.
+- This release requires NVS 5.4 or later.
+- When the Active Noise Reduction (ANR) functionality is enabled, beeps are added to the signal at regular intervals. For full, unrestricted version of the ANR functionality, contact <a href="http://www.vocal.com/noise-reduction/adaptive-noise-reduction/" target="_blank">vocal.com&reg;</a>.
+
+
+*/

@@ -1,0 +1,80 @@
+VOCAL END USER LICENSE AGREEMENT
+End User License Agreement – VOCAL Technologies, Ltd. (“VOCAL”)
+
+THIS END USER LICENSE AGREEMENT (EULA) GOVERNS YOUR USE OF THE SOFTWARE. 
+BY DOWNLOADING, INSTALLING OR USING THE SOFTWARE, YOU ARE AGREEING TO BE BOUND BY THE TERMS OF THIS AGREEMENT.
+
+1.	Software. The Software licensed under this EULA is VOCAL’s optimized Active Noise Control (ANC) software (in object code form).
+
+2.	License. Subject to the terms of this EULA, VOCAL grants to you a limited, non-exclusive, non-transferable, 
+        revocable license to use the Software in object code only solely for the purpose of evaluating Nordic Semiconductor’s 
+        “SmartRemote 3” and associated nRF52832 Development Kit, and Nordic Semiconductor’s boards containing the Software. 
+        You are not permitted to distribute the Software or any product that includes the Software, or use the Software in any 
+        unpermitted manner, without first obtaining a license from VOCAL that permits such distribution or use. 
+
+3.	Ownership. The Software and all intellectual property rights therein are and will 
+        remain the sole and exclusive property of VOCAL and its licensors. 
+
+4.	Restrictions. Except as otherwise provided in this EULA, you shall not, and shall not cause 
+        or permit any third party to: (i) reproduce, copy, modify, translate or create any derivative work 
+        of the Software or any portion thereof; (b) sell, rent, lease, provide, sublicense, distribute or 
+        otherwise transfer the Software or any portion thereof; (c) reverse engineer, reverse assemble or 
+        otherwise attempt to gain access to the source code of the Software or any portion thereof; (d) remove, 
+        alter, or obfuscate any copyright notices or other proprietary rights notice placed or embedded in 
+        or on the Software; or (e) use the Software in any manner not permitted by this EULA.  
+
+5.	Term and Termination. This EULA is effective until terminated, and either party may terminate this 
+        EULA at any time with or without cause. Your rights to use the Software shall automatically terminate 
+        if you breach any term of this EULA. Upon termination of this Agreement, you shall destroy all copies of the Software in your possession. 
+
+6.	Disclaimer and Limitation of Liability. THE SOFTWARE IS PROVIDED “AS-IS” AND VOCAL AND ITS 
+        LICENSORS AND SUPPLIERS MAKE NO WARRANTY, EXPRESS, IMPLIED OR STATUTORY, WITH RESPECT TO THE SOFTWARE
+        OR ANY PART THEREOF, INCLUDING WITHOUT LIMITATION, ANY IMPLIED WARRANTY OF TITLE, AVAILABILITY, 
+        RELIABILITY, USEFULNESS, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, 
+        OR THOSE ARISING FROM COURSE OF PERFORMANCE, DEALING, USAGE OR TRADE. NEITHER VOCAL NOR ANY OF 
+        ITS LICENSORS OR SUPPLIERS WARRANT THAT THE SOFTWARE WILL MEET YOUR REQUIREMENTS OR BE UNINTERRUPTED, 
+        TIMELY, AVAILABLE, SECURE OR ERROR-FREE. IN NOT EVENT SHALL VOCAL OR ITS EMPLOYEES, SUPPLIERS OR LICENSORS, 
+        BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES (INCLUDING, WITHOUT LIMITATION, 
+        LOST PROFITS), EVEN IF ADVISED OF THE POSSIBILITY THEREOF, AND REGARDLESS OF WHETHER ANY CLAIM IS BASED 
+        UPON ANY AGREEMENT, NEGLIGENCE, WARRANTY, STRICT LIABILITY OR OTHER LEGAL OR EQUITABLE THEORY. 
+
+7.	Laws. You shall at all times strictly comply with all laws and regulations applicable with respect to 
+        any use of the Software. Without limiting the generality of the foregoing, you agree to comply with 
+        all applicable export and import restrictions and regulations, and not to transfer, or authorize transfer 
+        of the Software to a prohibited country or otherwise in violation of such restrictions or regulations. 
+
+8.	Government Rights. This section applies to all acquisitions of the Software by or for the United States government.  
+        By accepting delivery of the Software, the United States government hereby agrees that the Software is a "commercial item" 
+        as that term is defined at Federal Acquisition Regulation (“FAR”) 12.101, consisting of "commercial computer 
+        software" and "commercial computer software documentation" as such terms are used in FAR 12.212 and that 
+        the United States government’s use and disclosure of the Software is controlled by the terms and conditions 
+        of this License Agreement to the maximum extent possible.  Consistent with FAR 12.212 and DFARS 227.7202, 
+        all United States government users acquire the Software with only those rights set forth herein.  
+        This EULA supersedes any contrary terms and conditions in any statement of work, contract, or other 
+        document relating to the United States government's use of the Software.
+
+9.	Indemnity. You agree to defend, indemnify, and hold VOCAL and its affiliates and its and their officers, 
+        directors, customers, employees and successors and assigns, harmless against any loss, 
+        damage or expense incurred by VOCAL (including reasonable attorneys’ fees) as a result of claims, 
+        actions or proceedings brought by a third party arising from: (a) use of the Software by you contrary 
+        to the terms of this EULA; (b) your unauthorized alteration, customization, derivation, configuration or 
+        modification of the Software; (c) claims that any software, products, derivative works or other materials 
+        that you develop using the Software infringe the intellectual property rights of any third party; or (d) breach of this EULA by you.
+
+10.	Miscellaneous.  You shall not assign this EULA or any of its rights or obligations under 
+        this Agreement, without VOCAL’s prior written consent. Notwithstanding the foregoing, 
+        this Agreement will be binding upon, inure to the benefit of and be enforceable by the parties hereto 
+        and their permitted assigns. This EULA constitutes the entire agreement between you and VOCAL with 
+        respect to the subject matter hereof, and supersedes any and all other prior or contemporaneous written or oral 
+        agreements existing between the parties regarding the subject matter of this Agreement. No modification of or 
+        amendment to this EULA, nor any waiver of any rights under this EULA shall be effective unless in writing signed 
+        by the party to be charged. This EULA is governed and interpreted in accordance with the laws of the State of 
+        New York, U.S.A., without reference to conflict of laws principles. If any of the provisions of this EULA is held 
+        by a court of competent jurisdiction to be invalid or unenforceable under any applicable statute or rule of law, 
+        such provision shall, to that extent, be deemed omitted, and the remaining portions of this Agreement shall 
+        remain in full force and effect. The waiver of one breach or default or delay in exercising any rights shall not 
+        constitute a waiver of any subsequent breach or default. All notices permitted or required under this Agreement 
+        shall be in writing and shall be mailed by first class, registered or certified mail, postage prepaid, 
+        to the address of the Party specified in this Agreement or such other address as either Party may specify in writing. 
+        Such notice shall be deemed to have been given upon receipt. Any notice to VOCAL must be sent to: 
+        VOCAL Technologies, Ltd., 520 Lee Entrance, Suite 202, Buffalo, NY 14228, Attn: Legal Department.

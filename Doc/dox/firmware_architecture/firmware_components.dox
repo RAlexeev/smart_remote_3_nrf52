@@ -1,0 +1,69 @@
+/**
+@page firmware_components Firmware components
+
+The Smart Remote application is built on the following components.
+
+@section firmware_modules Modules
+
+@subsection input_modules Input modules
+
+- @ref MOD_ACC            "m_acc" Low power accelerometer module.
+- @ref MOD_AUDIO          "m_audio" Audio module that handles voice input.
+- @ref MOD_AUDIO_FRAME    "m_audio_frame" Audio frame management module.
+- @ref MOD_BATT_MEAS      "m_batt_meas" Battery monitoring module.
+- @ref MOD_GYRO           "m_gyro" Gyroscope module that handles motion processing.
+- @ref MOD_KEYBOARD       "m_keyboard" Keyboard module for handling keypad events.
+- @ref MOD_TOUCHPAD       "m_touchpad" Touchpad module that deals with touch sensor data.
+
+@subsection output_modules Output modules
+
+- @ref MOD_BUZZER             "m_buzzer" Buzzer module.
+- @ref MOD_COMS               "m_coms" Module that handles high-level communication with host.
+	- @ref MOD_COMS_BLE       "m_coms_ble" Submodule that implements low-level communication procedures.
+	- @ref MOD_COMS_BLE_ADDR  "m_coms_ble_addr" Submodule that serves as flash address storage utility.
+	- @ref MOD_COMS_BLE_ADV   "m_coms_ble_adv" BLE advertising submodule.
+	- @ref MOD_COMS_BLE_ATVV  "m_coms_ble_atvv" Voice over BLE for Android implementation submodule.
+	- @ref MOD_COMS_BLE_DFU   "m_coms_ble_dfu" BLE Device Firmware Upgrade submodule.
+	- @ref MOD_COMS_BLE_HID   "m_coms_ble_hid" BLE HID over GATT submodule.
+	- @ref MOD_COMS_BLE_LESC  "m_coms_ble_lesc" Low Energy Secure Connection submodule.
+	- @ref MOD_COMS_BLE_ATVV  "m_coms_ble_atvv" Voice over BLE for Android TV implementation (<b>experimental feature</b>).
+
+- @ref MOD_IR_TX              "m_ir_tx" Infrared transmitter module.
+- @ref MOD_LEDS               "m_leds" LED module that handles LED signaling.
+- @ref MOD_NFC                "m_nfc" NFC module that provides support for the tap-to-pair feature.
+
+@subsection sys_state_modules System state and protocol modules
+
+- @ref MOD_INIT           "m_init" Initialization module that calls initialization functions for all enabled modules.
+- @ref MOD_PROTOCOL_HID   "m_protocol_hid" HID protocol module.
+- @ref MOD_PROTOCOL_IR    "m_protocol_ir" IR protocol module.  
+- @ref MOD_SYSTEM_STATE   "m_system_state" System state module.
+
+@section firmware_drivers Drivers
+
+- @ref DRV_ACC            "drv_acc" Low power accelerometer driver.
+- @ref DRV_AUDIO          "drv_audio" Audio driver.
+- @ref audio_codec        "drv_audio_codec" Audio codec driver.
+- @ref DRV_AUDIO_DSP      "drv_audio_dsp" Audio DSP virtual driver.
+- @ref DRV_BOARD          "drv_board" Board driver.
+- @ref DRV_GYRO           "drv_gyro" Gyroscope driver.
+- @ref DRV_IR             "drv_ir" Driver for the infrared protocol.
+- @ref DRV_KEYBOARD       "drv_keyboard" Keyboard driver.
+- @ref DRV_LEDS           "drv_leds" LED driver.
+- @ref DRV_TOUCHPAD       "drv_touchpad" Touchpad driver.
+
+
+@section debug Debug utilities
+
+- @ref APP_DEBUG_PIN           "app_debug_pin" Pin-based debug utilities.
+
+@section other Other components
+
+- @ref app_error          "app_error" Common application error handler.
+- @ref isched             "app_isched" Instantiable scheduler.
+- @ref app_scheduler      "app_scheduler" A custom implementation of the app_scheduler that replaces the SDK app_scheduler.
+- @ref EVENT_BUS          "event_bus" Event bus module.
+- @ref MOD_HW             "resources" Shared hardware resource configuration.
+- @ref TWI_COMMON         "twi_common" Common TWI procedures.
+
+*/

@@ -1,0 +1,47 @@
+/**
+@page firmware_config Step-by-step firmware configuration
+
+This chapter demonstrates two ways of configuring the firmware - using Keil or using <a href="https://sourceforge.net/projects/cmsisconfig/" target="blank">CMSIS Configuration Wizard tool</a>.
+
+@section firmware_config_keil Firmware configuration in Keil
+
+There are two Smart Remote application projects, each targeting a different SoC.
+Start by opening a project of your interest. Then, make sure that you select the
+right target and a matching configuration file.
+
+@image html Appendix_A_cfg_target.png "Target board selection in Keil IDE"
+
+All options for the target are included in appropriate header file. Use this
+file to configure project options for the selected target board.
+
+These header files are formatted according to the <a href="https://www.keil.com/pack/doc/CMSIS/Pack/html/configWizard.html" target="blank">Keil Configuration Wizard Annotations</a>.
+Use the Keil IDE or <a href="https://sourceforge.net/projects/cmsisconfig/" target="blank">CMSIS Configuration Wizard tool</a> to navigate these files more easily.
+
+@image html Appendix_A_cfg_header.png "Header selection in Keil IDE"
+
+The default options can be modified by editing the header file in the Text Editor
+window or by using the GUI provided by the Keil IDE Configuration Wizard.
+
+@image html Appendix_A_cfg_wizard.png "Configuration Wizard in Keil IDE"
+
+@section firmware_config_cmsis Firmware configuration in CMSIS Configuration Wizard
+
+The CMSIS Configuration Wizard tool is included in the Smart Remote installation. It can be found in the SDK subfolder under @c external_tools.
+Open the appropriate header file with the tool and use the wizard to configure your project.
+
+@image html Appendix_A_cfg_cmsis_cfg_wizard_tool.png "CMSIS Configuration Wizard tool"
+
+@section firmware_config_targets Available application projects and targets
+
+- Smart Remote on nRF52832 (Smart_Remote_3_nRF52_Firmware_nRF52832)
+ - PCA63519-SR3_nRF52832_Shield: @c sr3_config_nrf52832_pca63519.h
+ - PCA20023-SR3_nRF52832_Product_Example: @c sr3_config_nrf52832_pca20023.h
+ - CUSTOM-SR3_nRF52832_Custom_Board: @c sr3_config_nrf52832_custom.h
+
+- Smart Remote on nRF52810 (Smart_Remote_3_nRF52_Firmware_nRF52810)
+ - PCA20031-SR3_nRF52810_Product_Example: @c sr3_config_nrf52810_pca20031.h
+ - CUSTOM-SR3_nRF52810_Custom_Board: @c sr3_config_nrf52810_custom.h
+
+ @note For convenience, each project contains a target meant for user customization.
+      The content of it is an exact copy of the Product Example target.
+*/

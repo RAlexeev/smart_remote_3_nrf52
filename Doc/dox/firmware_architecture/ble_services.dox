@@ -1,0 +1,42 @@
+/**
+@page ble_services BLE services
+
+Smart Remote integrates several <em>Bluetooth</em> Low Energy services.
+
+@section ble_services_sdk SDK-based services
+
+The following BLE services used by Smart Remote come from the nRF5 SDK v14.2.0.
+
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/group__ble__bas.html" target="_blank">Battery Service</a>
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/group__ble__dis.html" target="_blank">Device Information Service</a>
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/service_hid.html" target="_blank">HID over GATT Service</a>
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/group__ble__ias.html" target="_blank">Immediate Alert Service</a>
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/group__ble__nus.html" target="_blank">Nordic UART Service (NUS)</a>
+
+@section ble_services_sr Smart Remote based services
+
+Smart Remote 3 nRF52 v1.2 adds the following services on top of nRF5 SDK v14.2.0.
+
+- @ref MOD_COMS_BLE_ATVV - Android TV Voice (ATVV) Service (<b>experimental feature</b>).
+- @ref MOD_COMS_BLE_DFU - Buttonless Device Firmware Update (DFU) Service modified to support @ref dfu in Smart Remote.
+
+@section ble_services_enabling Enabling services
+
+The services are initialized in the communications module, in @ref m_coms_ble_init.
+
+Battery service and battery measurement can be enabled with @ref CONFIG_BATT_MEAS_ENABLED.
+
+DFU service is active if DFU is enabled with @ref CONFIG_DFU_ENABLED.
+
+Nordic UART Service is used by CLI over BLE. See @ref ble_console.
+
+Immediate Alert Service is enabled if @ref CONFIG_LED_SIGNAL_IMMEDIATE_ALERT or @ref CONFIG_BUZZER_ENABLED are active.
+
+Voice can be transmitted from Smart Remote to the host in two ways:
+- Using @ref MOD_COMS_BLE_HID - it uses NVS on the host side to receive audio stream. Enable it with @ref CONFIG_AUDIO_HID_ENABLED.
+- Using @ref MOD_COMS_BLE_ATVV - the audio stream can be received by an Android TV host. Enable it with @ref CONFIG_AUDIO_ATVV_ENABLED.
+
+DFU service, ATVV service, and NUS use vendor-specific UUIDs.
+
+*/
+

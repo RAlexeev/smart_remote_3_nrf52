@@ -1,0 +1,38 @@
+/**
+@page task_management_latency_minimization Task management and latency minimization
+
+Smart Remote uses a unique task management scheme to minimize the overall system latency, based on the one employed by the nRF5 SDK.
+
+Because <em>Bluetooth</em> protocols require strict timing, the SoftDevice reserves top interrupt priorities for its exclusive usage to preempt the application when a protocol radio event has to be serviced. The table below presents interrupt priorities usage:
+
+|Cortex-M4 Priority  | Assignment       | Usage in Smart Remote   | Comment						     |
+|--------------------|------------------|-------------------------|----------------------------------|
+|0        			 | SoftDevice       |                         |									 |
+|1        			 | SoftDevice       |                         |									 |
+|2       			 | Application      |                         | No access to SoftDevice API		 |
+|3       			 | Application      |                         | No access to SoftDevice API		 |
+|4       			 | SoftDevice       | Debug Monitor           |								     |
+|5       			 | Application      | Interrupt handlers      |									 |
+|6        			 | Application      | Foreground Scheduler    |                                  |
+|7        			 | Application      | Background Scheduler    |                                  |
+|Thread              | Application      | Task Manager            |                                  |
+
+As shown in the table, a SoftDevice based application can use six out of nine interrupt priorities available on the nRF52 platform. It can call the SoftDevice API from only four of them.
+
+To avoid blocking of a given priority, all interrupts that require heavy processing, like SoftDevice events, can be rescheduled using a dedicated scheduler library. In such case, the interrupt only generates an event that is put into the queue and processed later on a lower priority level.
+
+Such approach allows for basic task priority management without using a real-time operating system. The low priority tasks can be rescheduled and thus preempted by high priority tasks running on higher priority levels. Moreover, special features of the nRF52 SoC, such as Software Interrupts and Event Generator Unit, can be used to leverage gain from such approach.
+
+To avoid interrupt blocking, all data processing that is triggered by interrupts is rescheduled. However, most of the peripheral state management is still performed in interrupt context. As a result, data processing does not block peripheral operation. Also, because interrupt handling procedures are generally very short and straightforward, peripherals do not usually block one another, even if they are operating at the same interrupt priority level.
+
+The nature of the Smart Remote application exhibits certain limitations of the nRF52 SDK single-scheduler approach. Voice data compression might take several milliseconds, during which no other data can be processed. This could lead to heavy jitter and latency of other types of user input, such as keyboard, air mouse, and touchpad.
+
+To avoid this problem, Smart Remote uses two schedulers. The first one, called Foreground Scheduler, executes tasks at priority level 6. It preempts the second one, called Background Scheduler, which executes tasks at priority level 7.
+
+The thread level is used by Task Manager, which handles the tasks that should not block any other activity: console, logger, as well as idle task.
+
+The firmware schedules time-critical events (SoftDevice events, non-audio data processing) to the Foreground Scheduler, while it schedules others (for example, audio processing and compression) to the Background Scheduler.
+
+Tasks executing from Foreground Scheduler together with the interrupts are estimated to take about 3% of the CPU load. This allows the system to remain responsive in any situation.
+
+*/

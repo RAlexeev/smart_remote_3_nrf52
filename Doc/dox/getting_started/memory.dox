@@ -1,0 +1,23 @@
+/**
+@page memory_configuration Flash memory layout
+
+The following flash memory layout presents how software components are distributted in the 
+Smart Remote project. This is a default configuration which has some space reserved for the 
+DFU bootloader.
+
+| Software Component            | Address (nRF5232) | Length (nRF52832)| Address (nRF52810)| Length (nRF52810)|
+| :---                          | :---:             | :---:            | :---:             | :---:            |
+| MBR                           | 0x00000           | 0x1000           | 0x00000           | 0x1000           |
+| SoftDevice                    | 0x01000           | 0x22000          | 0x01000           | 0x17000          |
+| Smart Remote Application      | 0x23000           | _varies_         | 0x18000           | _varies_         |
+| Smart Remote Application Data | 0x75000 _default_ | 0x2000 _default_ | 0x27000 _default_ | 0x2000 _default_ |
+| Smart Remote Bootloader       | 0x77000           | _varies_         | 0x29000           | _varies_         |
+| MBR Params (nRF52832 only)    | 0x7E000           | 0x1000           | _not-available_   | _not-available_  |
+| Bootloader Settings           | 0x7F000           | 0x1000           | 0x2F000           | 0x1000           |
+
+@note All software component areas must be aligned to page size (0x1000 B).
+
+@note MBR Params area is not required in the nRF52810 Smart Remote project, as the nRF52810 bootloader
+      does not support update of the SoftDevice or of the bootloader.
+
+*/

@@ -1,0 +1,49 @@
+/**
+@defgroup input Input Modules
+
+@brief This section contains information about the input modules that are part of the Smart Remote 3 nRF52 firmware.
+
+
+*/
+
+/**
+@defgroup output Output modules
+
+@brief This section contains information about the output modules that are part of the Smart Remote 3 nRF52 firmware.
+
+
+*/
+
+/**
+@defgroup system_protocol System state and protocol modules
+
+@brief This section contains information about the system state and protocol modules that are part of the Smart Remote 3 nRF52 firmware.
+
+
+*/
+
+/**
+@defgroup ble BLE-related submodules
+@ingroup MOD_COMS
+
+@brief This section contains information about the BLE-related submodules that are part of the Smart Remote 3 nRF52 firmware.
+
+
+*/
+
+
+/**
+@defgroup sr3_config Configuration files
+
+@brief Configuration values for adjusting features of the Smart Remote 3 nRF52 firmware.
+
+
+*/
+
+/**
+@defgroup other Other components
+
+@brief This section contains information about all other components that are part of the Smart Remote 3 nRF52 firmware.
+
+
+*/
