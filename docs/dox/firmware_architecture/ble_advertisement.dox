@@ -1,0 +1,36 @@
+/**
+@page ble_advertisement BLE advertisement
+
+Smart Remote automatically starts advertising after a power-on or a wakeup.
+Depending on the remote state and configuration, the firmware chooses one of the following advertising modes.
+
+@section ble_advertisement_unboad Undirected bondable advertising
+
+<b>Requirements:</b><br>
+No bond information stored in flash or whitelist and directed advertising modes are both disabled (both @ref CONFIG_ADV_WHITELIST and @ref CONFIG_ADV_DIRECTED are set to 0).
+
+In this mode, the remote advertises for 180 seconds waiting for host connection. If there is no connection attempt during that time, the remote triggers a shutdown procedure and enters power-down state.
+In this mode, the advertising interval is configurable and can be set using the @ref CONFIG_ADV_INTERVAL_MS define.
+
+@section ble_advertisement_unwhad Undirected whitelist-based advertising
+
+<b>Requirements:</b><br>
+Bond information is stored in flash and directed advertising is disabled (@ref CONFIG_ADV_DIRECTED is set to&nbsp;0).
+
+In this mode, if there is no connection attempt for @ref CONFIG_ADV_TIMEOUT seconds, the remote triggers a shutdown procedure and enters power-down state.
+The advertising interval is configurable and can be set using the @ref CONFIG_ADV_INTERVAL_MS define.
+
+@section ble_advertisement_diad Directed advertising
+
+<b>Requirements:</b><br>
+Bond information is stored in flash and directed advertising is enabled (@ref CONFIG_ADV_DIRECTED is set to&nbsp;1).
+
+In this mode, the remote repeats high duty cycle directed advertising for @ref CONFIG_ADV_TIMEOUT seconds.
+If there is no successful connection attempt during that time, the remote triggers a shutdown procedure and enters power-down state.
+
+
+@note Advertising can be terminated earlier by the <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/lib_pwr_mgmt.html" target="blank">nrf_pwr_mgmt module</a> if advertising timeout is greater than the standby timeout configured using the @ref CONFIG_PWR_MGMT_CONFIG_STANDBY_TIMEOUT_S define.
+
+@note If the power management module is disabled (@ref CONFIG_PWR_MGMT_ENABLED is set to 0), for example for debug purposes, the remote restarts advertising instead of triggering a shutdown procedure.
+
+*/

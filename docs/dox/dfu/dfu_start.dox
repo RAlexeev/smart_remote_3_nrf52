@@ -1,0 +1,85 @@
+/**
+@page dfu_remarks DFU - before you start
+
+It is important that you are well aware of the differences between the DFU procedure implemented by the nRF5 SDK and the one
+implemented by Smart Remote before running an OTA-DFU procedure. The aim of this section is to gather all these differences
+in one place to help you perform a successful and safe DFU procedure on your device.
+
+Differences between the reference design (Smart Remote) and SDK code
+====================================================================
+
+Inactivity timeout
+------------------
+
+After entering the DFU mode, if you do not start an update within 120 seconds, the bootloader re-enters the application,
+if it still exists in the flash memory.
+
+If the application no longer exists in flash, for example because a SoftDevice update was performed, then after a specified
+timeout, the bootloader enters low power advertising mode. Long advertising interval is used in this mode to save battery.
+
+Improved SoftDevice compatibility checks
+----------------------------------------
+
+To prevent running the application with an incompatible SoftDevice, which could result in bricking of the device, you
+cannot upgrade the SoftDevice without upgrading the bootloader, unless you are only updating the SoftDevice by a <em>bugfix</em> version.
+
+The version number of the SoftDevice represents the following hierarchy: <em>major.minor.bugfix</em>. If you attempt to
+change the <em>major</em> or <em>minor</em> version of the SoftDevice without updating the bootloader, the update will
+be refused. If you change the <em>major</em> or <em>minor</em> version of the SoftDevice together with the bootloader,
+the application will be invalidated.
+
+@warning To prevent bricking of the device when updating the SoftDevice together with the bootloader, make sure that the bootloader
+binary is compatible with the new SoftDevice.
+
+Allow bootloader reloading
+--------------------------
+The bootloader allows for an update using the same version of the bootloader. This prevents a situation where the DFU
+process cannot continue after being interrupted in its second stage. This applies to two-stage DFU procedures in which
+the SoftDevice and the bootloader are updated first before the application image.
+
+Bootloader/application shared data
+----------------------------------
+
+The application data that is shared with bootloader (information about bonds and device name) is updated directly from
+the application code, without any calls to the bootloader code.
+
+Fallback open advertising mode
+------------------------------
+
+In case the shared information provided by the application via the bootloader settings is corrupted, and the application
+does no longer exist (it was erased during the DFU procedure), the bootloader switches to fallback open
+advertising mode to allow continuation of the DFU process.
+
+If shared information is corrupted but the application is available, the bootloader interrupts the DFU procedure and
+boots to the application, which rewrites shared data on the next DFU attempt.
+
+If the bond information is valid, the bootloader always uses it and connects only to a bonded device.
+
+Service change indication
+-------------------------
+
+After every application update via DFU, the application sends a service change indication.
+
+Application checksum verification
+---------------------------------
+
+The bootloader does not check the application checksum when leaving low power mode.
+The application checksum is checked when the device is powered up.
+
+Flow control
+------------
+
+In case flash is not fast enough to store the incoming firmware data, the bootloader delays the response to the host device
+until the required number of data buffers is available.
+
+Support for nRF52810
+--------------------
+
+The Smart Remote bootloader adds modifications required to run it on the nRF52810 SoC.
+
+Due to smaller flash and RAM area available on nRF52810, there are significant configuration differences for the bootloader
+targeting nRF52832 and nRF52810. On nRF52810, it is not possible to update the bootloader or the SoftDevice (only the application
+can be updated). When the application is downloaded, the old application is always deleted (the in-place application update
+model is used).
+
+*/

@@ -1,0 +1,210 @@
+/**
+\page   HID HID report descriptor
+\anchor HID
+
+This section describes how the Human Interface Device (HID) interfaces are configured.
+It is assumed that the reader is familiar with USB HID and the <em>Bluetooth</em> low energy equivalent - HID over GATT (HoG). 
+For more information about USB HID, visit USB.org's <a href="http://www.usb.org/developers/hidpage/" target="_blank">developer section</a>. To learn more about the HID over GATT Profile, see the <em>Bluetooth</em> SIG's <a href="https://www.bluetooth.org/en-us/specification/adopted-specifications" target="_blank">adopted specifications</a>.
+<br>
+
+\section hid_hog HID over GATT (HoG) descriptor
+Smart Remote has one HoG Service used for audio, touchpad, keyboard, and gyro operations.
+The HID descriptor, also referred to as Report Map, is detailed below and can be configured in the file @c m_coms.c.
+<br>
+\code
+#if CONFIG_AUDIO_ENABLED && CONFIG_AUDIO_HID_ENABLED
+    /*
+     * Audio
+     */
+    0x06, 0x00, 0xFF,               // Usage Page (Vendor Defined Page 1)
+    0x09, AUDIO_CONFIG_ID,          // Usage (Vendor Usage)
+    0xA1, 0x01,                     // Collection (Application)
+    0x85, AUDIO_IN_REP_ID,          //     Report ID (AUDIO_IN_REP_ID)
+    0x15, 0x00,                     //     Logical Minimum (0)
+    0x25, 0xFF,                     //     Logical Maximum (255)
+    0x75, AUDIO_IN_REP_SIZE,        //     Report Size (AUDIO_IN_REP_SIZE)
+    0x95, AUDIO_IN_REP_COUNT,       //     Report Count (AUDIO_IN_REP_COUNT)
+    0x09, 0x00,                     //     Usage (Vendor Usage 1)
+    0x81, 0x02,                     //     Input (Data, Var, Abs)
+#if (AUDIO_IN_REP_ID != AUDIO_OUT_REP_ID)
+    0x85, AUDIO_OUT_REP_ID,         //     Report ID (AUDIO_OUT_REP_ID)
+#endif
+    0x95, AUDIO_OUT_REP_COUNT,      //     Report Count (AUDIO_OUT_REP_COUNT)
+    0x75, AUDIO_OUT_REP_SIZE,       //     Report Size (AUDIO_OUT_REP_SIZE)
+    0x09, 0x00,                     //     Usage (Vendor Usage 1)
+    0x91, 0x02,                     //     Output (Data, Var, Abs)
+    0xC0,                           // End Collection
+#endif /* CONFIG_AUDIO_ENABLED && CONFIG_AUDIO_HID_ENABLED */
+
+    /*
+     * Keyboard
+     */
+    0x05, 0x01,                     // Usage Page (Generic Desktop)
+    0x09, 0x06,                     // Usage (Keyboard)
+    0xA1, 0x01,                     // Collection (Application)
+    0x85, KEYBOARD_IN_REP_ID,       //      Report ID (KEYBOARD_IN_REP_ID)
+    0x75, KEYBOARD_IN_REP_SIZE,     //      Report Size (KEYBOARD_IN_REP_SIZE)
+    0x95, KEYBOARD_IN_REP_COUNT,    //      Report Count (KEYBOARD_IN_REP_COUNT)
+    0x15, 0x00,                     //      Logical Minimum (0)
+    0x25, 0xFF,                     //      Logical Maximum (255)
+    0x05, 0x07,                     //      Usage Page (Keyboard)
+    0x19, 0x00,                     //      Usage Minimum (0)
+    0x29, 0xFF,                     //      Usage Maximum (255)
+    0x81, 0x00,                     //      Input (Data, Ary, Abs)
+    0xC0,                           // End Collection
+
+    /*
+     * Consumer Control
+     */
+    0x05, 0x0C,                     // Usage Page (Consumer Devices)
+    0x09, 0x01,                     // Usage (Consumer Control)
+    0xA1, 0x01,                     // Collection (Application)
+    0x85, CONSUMER_CTRL_IN_REP_ID,  //      Report ID (CONSUMER_CTRL_IN_REP_ID)
+    0x75, CONSUMER_CTRL_IN_REP_SIZE,//      Report Size (CONSUMER_CTRL_IN_REP_SIZE)
+    0x95, CONSUMER_CTRL_IN_REP_COUNT,//     Report Count (CONSUMER_CTRL_IN_REP_COUNT)
+    0x15, 0x00,                     //      Logical Minimum (0)
+    0x26, 0xFF, 0x07,               //      Logical Maximum (2047)
+    0x19, 0x00,                     //      Usage Minimum (0)
+    0x2A, 0xFF, 0x07,               //      Usage Maximum (2047)
+    0x81, 0x00,                     //      Input (Data, Ary, Abs)
+    0xC0,                           // End Collection
+
+    /*
+     * Mouse
+     */
+    0x05, 0x01,                     // Usage Page (Generic Desktop)
+    0x09, 0x02,                     // Usage (Mouse)
+    0xA1, 0x01,                     // Collection (Application)
+    0x09, 0x01,                     //       Usage (Pointer)
+    0xA1, 0x00,                     //       Collection (Physical)
+    0x85, MOUSE_BTN_IN_REP_ID,      //          Report ID (MOUSE_BTN_IN_REP_ID)
+    0x75, MOUSE_BTN_IN_REP_SIZE,    //          Report Size (MOUSE_BTN_IN_REP_SIZE)
+    0x95, MOUSE_BTN_IN_REP_COUNT,   //          Report Count (MOUSE_BTN_IN_REP_COUNT)
+    0x15, 0x00,                     //          Logical Minimum (0)
+    0x25, 0x01,                     //          Logical Maximum (1)
+    0x05, 0x09,                     //          Usage Page (Button)
+    0x19, 0x01,                     //          Usage Minimum (Button 1)
+    0x29, 0x08,                     //          Usage Maximum (Button 8)
+    0x81, 0x02,                     //          Input (Data, Var, Abs)
+    0xC0,                           //      End Collection
+    0xA1, 0x00,                     //      Collection (Physical)
+    0x85, MOUSE_XY_IN_REP_ID,       //          Report ID (MOUSE_XY_IN_REP_ID)
+    0x75, MOUSE_XY_IN_REP_SIZE,     //          Report Size (MOUSE_XY_IN_REP_SIZE)
+    0x95, MOUSE_XY_IN_REP_COUNT,    //          Report Count (MOUSE_XY_IN_REP_COUNT)
+    0x16, 0x01, 0xF8,               //          Logical Minimum (-2047)
+    0x26, 0xFF, 0x07,               //          Logical Maximum (2047)
+    0x05, 0x01,                     //          Usage Page (Generic Desktop)
+    0x09, 0x30,                     //          Usage (X)
+    0x09, 0x31,                     //          Usage (Y)
+    0x81, 0x06,                     //          Input (Data, Var, Rel)
+    0xC0,                           //      End Collection
+    0xA1, 0x00,                     //      Collection (Physical)
+    0x85, MOUSE_WP_IN_REP_ID,       //          Report ID (MOUSE_WP_IN_REP_ID)
+    0x75, MOUSE_WP_IN_REP_SIZE,     //          Report Size (MOUSE_WP_IN_REP_SIZE)
+    0x95, 0x01,                     //          Report Count (1)
+    0x15, 0x81,                     //          Logical Minimum (-127)
+    0x25, 0x7F,                     //          Logical Maximum (127)
+    0x05, 0x01,                     //          Usage Page (Generic Desktop)
+    0x09, 0x38,                     //          Usage (Wheel)
+    0x81, 0x06,                     //          Input (Data, Var, Rel)
+    0x75, MOUSE_WP_IN_REP_SIZE,     //          Report Size (MOUSE_WP_IN_REP_SIZE)
+    0x95, 0x01,                     //          Report Count (1)
+    0x15, 0x81,                     //          Logical Minimum (-127)
+    0x25, 0x7F,                     //          Logical Maximum (127)
+    0x05, 0x0C,                     //          Usage Page (Consumer Devices)
+    0x0A, 0x38, 0x02,               //          Usage (AC Pan)
+    0x81, 0x06,                     //          Input (Data, Var, Rel)
+    0xC0,                           //      End Collection
+    0xC0,                           // End Collection
+\endcode
+<br>
+
+\section hid_reports HID Reports
+
+The above descriptors specify the following reports.
+
+<table><caption>Mouse X/Y Input Report</caption>
+<tr><th>Byte</th><th>Bit 7</th><th>Bit 6</th><th>Bit 5</th><th>Bit 4</th><th>Bit 3</th><th>Bit 2</th><th>Bit 1</th><th>Bit 0</th></tr>
+<tr align="center"><td>0</td><td align="center" colspan="8">X movement delta [0:7]</td></tr>
+<tr align="center"><td>1</td><td align="center" colspan="4">Y movement delta [0:3]</td><td align="center" colspan="4">X movement delta [8:11]</td></tr>
+<tr align="center"><td>2</td><td align="center" colspan="8">Y movement delta [4:11]</td></tr>
+</table>
+
+<br>
+<br>
+
+<table><caption>Mouse Button Input Report</caption>
+<tr><th>Byte</th><th>Bit 7</th><th>Bit 6</th><th>Bit 5</th><th>Bit 4</th><th>Bit 3</th><th>Bit 2</th><th>Bit 1</th><th>Bit 0</th></tr>
+<tr align="center"><td>0</td><td>Button 8</td><td>Button 7</td><td>Button 6</td><td>Button 5</td><td>Button 4</td><td>Button 3</td><td>Button 2</td><td>Button 1</td></tr>
+
+</table>
+
+<br>
+<br>
+
+<table><caption>Mouse Wheel/Pan Input Report</caption>
+<tr><th>Byte</th><th>Bit 7</th><th>Bit 6</th><th>Bit 5</th><th>Bit 4</th><th>Bit 3</th><th>Bit 2</th><th>Bit 1</th><th>Bit 0</th></tr>
+<tr align="center"><td>0</td><td align="center" colspan="8">Wheel</td></tr>
+<tr align="center"><td>1</td><td align="center" colspan="8">AC Pan</td></tr>
+</table>
+
+<br>
+<br>
+
+<table><caption>Consumer Control Input Report</caption>
+<tr><th>Byte</th><th>Bit 7</th><th>Bit 6</th><th>Bit 5</th><th>Bit 4</th><th>Bit 3</th><th>Bit 2</th><th>Bit 1</th><th>Bit 0</th></tr>
+<tr align="center"><td>0</td><td align="center" colspan="8">Key code [0:7]</td></tr>
+<tr align="center"><td>1</td><td align="center" colspan="4">Key code [0:3]</td><td align="center" colspan="4">Key code [8:11]</td></tr>
+<tr align="center"><td>2</td><td align="center" colspan="8">Key code [4:11]</td></tr>
+</table>
+
+<br>
+<br>
+
+<table><caption>Keyboard Input Report</caption>
+<tr><th>Byte</th><th>Bit 7</th><th>Bit 6</th><th>Bit 5</th><th>Bit 4</th><th>Bit 3</th><th>Bit 2</th><th>Bit 1</th><th>Bit 0</th></tr>
+<tr align="center"><td>0</td><td align="center" colspan="8">Key code</td></tr>
+<tr align="center"><td>1</td><td align="center" colspan="8">Key code</td></tr>
+<tr align="center"><td>2</td><td align="center" colspan="8">Key code</td></tr>
+</table>
+
+<br>
+<br>
+
+<table><caption>Audio data report</caption>
+<tr><th>Byte</th><th>Bit 7</th><th>Bit 6</th><th>Bit 5</th><th>Bit 4</th><th>Bit 3</th><th>Bit 2</th><th>Bit 1</th><th>Bit 0</th></tr>
+<tr align="center"><td>0</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>1</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>2</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>3</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>4</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>5</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>6</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>7</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>8</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>9</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>10</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>11</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>12</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>13</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>14</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>15</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>16</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>17</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>18</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>19</td><td align="center" colspan="8">Encoded audio</td></tr>
+<tr align="center"><td>...</td><td align="center" colspan="8">Encoded audio</td></tr>
+</table>
+
+<br>
+
+@note The audio report can be larger than 20 bytes if a large MTU is used.
+
+<br>
+
+<table><caption>Audio command report</caption>
+<tr><th>Byte</th><th>Bit 7</th><th>Bit 6</th><th>Bit 5</th><th>Bit 4</th><th>Bit 3</th><th>Bit 2</th><th>Bit 1</th><th>Bit 0</th></tr>
+<tr align="center"><td>0</td><td align="center" colspan="8">Command value</td></tr>
+</table>
+
+*/

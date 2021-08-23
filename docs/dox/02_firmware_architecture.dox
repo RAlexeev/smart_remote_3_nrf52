@@ -1,0 +1,56 @@
+/**
+@page   firmware_architecture Firmware architecture
+@anchor firmware_architecture
+
+The Smart Remote firmware consists of independent modules grouped around the event bus, which functions as the main communication channel in the system. The modules broadcast messages using the event bus or react to messages that are sent by other modules.
+
+@image html sr3_nrf52_fw_arch.svg "Firmware architecture block diagram"
+
+The modules can be divided into three categories, based on their role in the system:
+- @ref input use dedicated drivers to fetch data from sensors or from the user. They generate events when new input is available.
+- @ref output work in the opposite way: they monitor the event bus and when a corresponding event is detected, they send data or change hardware state using dedicated drivers.
+- @ref system_protocol do not communicate with the hardware but take care of the firmware itself. This group consists of the system state module, which is responsible for the firmware state management as a whole, and the protocol modules, which decide what and when is sent over the output interfaces.
+
+For example, when a keyboard key is pressed, the keyboard module sends an EVT_KEY_DOWN event with a corresponding key identifier. When the HID protocol module detects this message, it checks if the given key is mapped to a HID usage code. If it is mapped, it sends an EVT_HID_REPORT_INPUT message with a corresponding usage code. This message is interpreted by the communication module which updates its state and sends the report to the host.
+At the same time, the IR protocol module checks the IR keyboard map in response to the EVT_KEY_DOWN message. If the key is mapped, it sends an EVT_IR_SYMBOL event, which is interpreted by the IR Transmission module, responsible for controlling the IR transmitter.
+
+Because all event messages that are sent over the event bus have to use a common event_t data structure, all modules use the same unified data format. Also, to keep the design of individual modules simple and straightforward, all of them operate on the same interrupt level. This assures context unification and eliminates the need of explicit synchronization and locking. For details about context management, consult @ref task_management_latency_minimization.
+
+In the Smart Remote firmware architecture, modules cannot directly communicate with the hardware. Instead, they use dedicated drivers. The drivers abstract the hardware of a particular type, providing simple API for basic operations, like power management, data readout, and similar.
+All data and state management is realized by the corresponding module that handles a given peripheral.
+
+@section firmware_architecture_details Firmware architecture aspects
+
+See the following sections for detailed descriptions of specific aspects of the firmware architecture.
+
+@subpage audio
+
+@subpage ble_advertisement
+
+@subpage ble_connection
+
+@subpage ble_services
+
+@subpage clocking_options
+
+@subpage firmware_components
+
+@subpage HID
+
+@subpage hid_subsystem
+
+@subpage ir
+
+@subpage nfc
+
+@subpage packet_scheduling
+
+@subpage api_calls_pattern
+
+@subpage power_management
+
+@subpage task_management_latency_minimization
+
+@subpage user_input
+
+*/

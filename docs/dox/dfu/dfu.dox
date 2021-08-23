@@ -1,0 +1,20 @@
+/**
+@page dfu Over-The-Air Device Firmware Update (OTA-DFU)
+
+The Smart Remote bootloader integrates support for OTA-DFU.
+The OTA-DFU is largely based on the nRF5 SDK 14.2.0 implementation, with certain important improvements and customizations outlined for you in @ref dfu_remarks.
+
+For information on the DFU bootloader and the DFU process, refer to these sections in nRF5 SDK v14.2.0 documentation:
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/lib_bootloader_dfu_process.html" target="blank">Device Firmware Update Process</a>
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/ble_sdk_app_dfu_bootloader.html" target="blank">BLE Secure DFU Bootloader Example</a>
+
+For more information see:
+-------------------------
+
+@subpage dfu_remarks
+
+@subpage dfu_generating
+
+@subpage dfu_performing
+
+*/

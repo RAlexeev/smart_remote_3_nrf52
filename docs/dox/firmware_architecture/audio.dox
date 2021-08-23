@@ -1,0 +1,251 @@
+/**
+@page audio Audio subsystem
+
+Smart Remote features a comprehensive audio subsystem that lets you customize your remote to different use cases involving audio input.
+
+@section audio_functionality Audio functionality
+
+Smart Remote provides the capability to perform a variety of audio processing operations on audio data.
+
+- Capturing
+		- PDM: 16-bit at 8/16/24/32 kHz
+- Processing
+		- Gain
+		- Equalizer
+		- Active Noise Reduction (ANR)
+- Compressing
+		- Four codecs are available: ADPCM, BroadVoice32 (BV32FP), Opus (SILK and CELT), SBC (including mSBC)
+- Transmitting
+		- Voice over HID over GATT (VoHoG)
+		- Android TV Voice Service (ATVV)
+
+@section audio_architecture Audio architecture
+
+Two different memory pools play a crucial role in the audio architecture - the audio buffer pool and the audio frame pool. Both of them involve data circulation and function on a loop basis - buffers and frames are allocated, processed, and then returned to the pool to be reused.
+
+Audio buffer characteristics:
+- Holds uncompressed audio data.
+- Size in samples defines time span.
+- Size in bytes equals to @code sizeof(int16_t) * <number of samples> @endcode
+
+Audio frame characteristics:
+- Holds compressed audio data.
+- Size in samples equals to the size of the audio buffer.
+- Size in bytes depends on codec bit rate (might be variable).
+
+@image html audio_buffers_frames.svg "Audio buffer and audio frame pools"
+
+-# The microphone (or microphones) that collects audio input is connected to the pulse density modulation (PDM) interface of the nRF52 SoC.
+-# When audio input appears, the PDM interface starts to fill audio buffers. These buffers are allocated from a memory pool called the audio buffer pool.
+-# When a buffer has been filled with audio data, an event is scheduled to the background scheduler. The background scheduler holds a pointer to the buffer as an argument to the event handler.
+-# Background scheduler runs the @c m_audio_process() function, which gets the audio buffer as an argument.
+-# The function converts the buffer into an audio frame according to the configured audio specification. The frame is allocated from a memory pool called the audio frame pool. The processed audio buffer is returned to the buffer pool.
+-# The frame transmission is then scheduled to the foreground scheduler.
+-# After data is sent, the frame returns to the audio frame pool and can be reused.
+
+This kind of frame and buffer management mechanism allows for compensating the jitter of calling the @c m_audio_process() function (related to greater CPU usage), as well as the jitter of data transmission.
+
+There are certain situations in which the audio system might lose data. Each of these situations is clearly signaled as a warning on the console and included in audio statistics.
+- The PDM interface cannot allocate a buffer on time, for example, because the buffer pool is empty.
+@code <warning> drv_audio_pdm: drv_audio_pdm_event_handler(): WARNING: Cannot allocate audio buffer! @endcode
+- The @c m_audio_process function cannot allocate a frame and process the buffer as a consequence. In such case, the buffer is freed without processing and its data is lost.
+@code <warning> m_audio: m_audio_process(): WARNING: Cannot allocate audio frame! @endcode
+- A frame is created but it cannot be sent. The frame is freed to the frame pool and data is lost.
+@code <warning> m_audio: m_audio_process(): WARNING: Cannot schedule audio frame transmission! @endcode
+
+The audio module gathers information about lost frames and buffers. These statistics can be viewed using @ref audio_gauges of @ref audio_cli.
+
+@section audio_sizes Buffer and frame sizes
+
+One execution of the @c m_audio_process() function corresponds to one buffer being converted into a frame.
+
+Buffers hold data in PCM format which means that each of them takes considerable amounts of memory. However, the scheduling applied in the audio subsystem is optimized in such a way to have fewer buffers, which is possible because of relatively small jitter during audio processing.
+
+Frames require less memory because they hold compressed data. However, more of them are required because jitter and latency are higher during the transmission.
+Even though buffers and corresponding frames differ in terms of used memory, they carry the same number of samples.
+
+The frame size fully depends on the used codec and its configuration. When you choose and configure a particular codec, the following defines are set automatically:
+- @c CONFIG_FRAME_SIZE_SAMPLES - Determines the number of audio samples a frame can hold.
+- @c CONFIG_FRAME_SIZE_MS - Determines the duration of audio samples a frame can hold.
+- @c CONFIG_FRAME_SIZE_BYTES - Determines the maximum size of a frame, in bytes.
+
+The frame size in bytes and its duration in ms determines its maximum bit rate. A frame can be smaller (containing fewer bytes) and thus bit rate might be reduced.
+
+@section audio_sampling Configured sampling and actual sampling
+
+The configured frame size in ms does not precisely reflect its actual value. The audio codecs available for Smart Remote support the standard sampling frequencies: 8 kHz, 16 kHz, 24 kHz, or 32 kHz. However, because of its characteristics, the nRF52 SoC cannot achieve exactly such sampling frequencies, which results in a discrepancy. For example, with 16000 Hz configured as the sampling frequency, the actual frequency is 16125 Hz, which means that 125 more samples are produced per second. The bit rate is also affected by this mechanism.
+
+The used codec still treats the configured sampling value as the actual one. That is why, when configuring the codec, you must use the idealized sampling values. On the other hand, when analyzing audio using command-line tools, the audio subsystem shows the actual sampling and bit rate values.
+
+@section audio_codecs_configs Audio codecs configuration
+
+The audio subsystem features four codecs that can be used for compressing audio data: ADPCM, BV32FP, Opus CELT/SILK, and SBC/mSBC. The following table presents their available configurations in terms of bit rate and sampling rate :
+
+
+<table>
+<tr style="height: 20px;">
+<th style="height: 20px; text-align: center;">Codec</th>
+<th style="height: 20px; text-align: center;">Sampling Frequency</th>
+<th style="height: 20px; text-align: center;">Bit rate</th>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 80px; text-align: center;" rowspan="4">ADPCM</td>
+<td style="height: 20px; text-align: center;">8 kHz</td>
+<td style="height: 20px; text-align: center;">32 kbit/s</td>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 20px; text-align: center;">16 kHz</td>
+<td style="height: 20px; text-align: center;">64 kbit/s</td>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 20px; text-align: center;">24 kHz</td>
+<td style="height: 20px; text-align: center;">96 kbit/s</td>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 20px; text-align: center;">32 kHz</td>
+<td style="height: 20px; text-align: center;">128 kbit/s</td>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 20px; text-align: center;">BV32FP</td>
+<td style="height: 20px; text-align: center;">16 kHz</td>
+<td style="height: 20px; text-align: center;">32 kbit/s</td>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 60px; text-align: center;" rowspan="3">Opus CELT</td>
+<td style="height: 20px; text-align: center;">8 kHz</td>
+<td style="height: 20px; text-align: center;">Configurable: VBR or CVBR/CBR 16-128 kbit/s</td>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 20px; text-align: center;">16 kHz</td>
+<td style="height: 20px; text-align: center;">Configurable: VBR or CVBR/CBR 16-128 kbit/s</td>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 20px; text-align: center;">24 kHz</td>
+<td style="height: 20px; text-align: center;">Configurable: VBR or CVBR/CBR 16-128 kbit/s</td>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 40px; text-align: center;" rowspan="2">Opus SILK</td>
+<td style="height: 20px; text-align: center;">8 kHz</td>
+<td style="height: 20px; text-align: center;">Configurable: VBR or CVBR/CBR 16-128 kbit/s</td>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 20px; text-align: center;">16 kHz</td>
+<td style="height: 20px; text-align: center;">Configurable: VBR or CVBR/CBR 16-128 kbit/s</td>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 40px; text-align: center;" rowspan="2">SBC</td>
+<td style="height: 20px; text-align: center;">16 kHz</td>
+<td style="height: 20px; text-align: center;">Depends on codec configuration</td>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 20px; text-align: center;">32 kHz</td>
+<td style="height: 20px; text-align: center;">Depends on codec configuration</td>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 40px; text-align: center;" rowspan="2">mSBC</td>
+<td style="height: 20px; text-align: center;">16 kHz</td>
+<td style="text-align: center; height: 20px;">62.5 kbit/s</td>
+</tr>
+<tr style="height: 20px;">
+<td style="height: 20px; text-align: center;">32 kHz</td>
+<td style="text-align: center; height: 20px;">125 kbit/s</td>
+</tr>
+</table>
+
+
+@section audio_transports Audio transports
+Two different BLE Services can be used for transmission of the compressed audio frames: Voice over HID over GATT (VoHoG) and Voice over BLE for Android TV (ATVV).
+At least one or both of these must be enabled in order to use the audio feature (see @ref ble_services for details). 
+
+The @ref packet_scheduling mechanism applies to both services.
+
+@subsection audio_transports_vohog Voice over HID over GATT
+Voice over HID over GATT (VoHoG) uses the standard HID over GATT (HoG) service to transmit compressed audio frames as HID Vendor Reports.
+Frames are fragmented into one or more chunks which are transmitted one at a time as HID reports. The host receives the chunk(s) and decompresses the audio frame for playback using the chosen codec (see @ref nvs for host-side details).
+
+See @ref hid_subsystem for details regarding the HID subsystem, and @ref HID for HID descriptor and packet format details. 
+
+@subsection audio_transports_atvv Android TV Voice Service
+Android TV Voice (ATVV) Service can be used for audio transmission to the Android TV host.
+
+See @ref MOD_COMS_BLE_ATVV for implementation details. If further information is required, please contact Google.
+
+@note ATVV Service has restrictions regarding audio codec choice and microphone sampling rate. These restrictions also apply to VoHoG when both Services are enabled.
+
+@warning Consider this transport as an experimental feature, which can change at any time. Currently, v0.4 is supported.
+
+@section audio_gauges Audio gauges
+
+A highly configurable audio subsystem offers great flexibility. In order to ease its tuning and monitoring, a special infrastructure, called Audio Gauges, was created.
+When Audio Gauges are enabled (@ref CONFIG_AUDIO_GAUGES_ENABLED is set to 1), detailed statistics are collected during audio transmission. After stopping an audio transfer,
+they are logged and can be observed on the console:
+@code
+<info> m_audio: Enabled
+<info> drv_audio_codec: OPUS/CELT Codec initialized (mode: VBR, complexity: 0, frame: 20 ms).
+<info> m_audio: Disabled
+<info> m_audio_gauges: Buffers processed: 222, lost: 0, discarded: 0 (loss ratio: 0%, discard ratio: 0%)
+<info> m_audio_gauges: Frames processed: 219, lost: 0, discarded: 1 (loss ratio: 0%, discard ratio: 0%)
+<info> m_audio_gauges:  Bitrate (min/avg/max): 14/16/21 kbit/s
+<info> m_audio_gauges:  CPU usage (min/avg/max): 54%/57%/64%
+<info> m_audio_gauges:       - ANR CPU usage (min/avg/max): 23%/26%/31%
+<info> m_audio_gauges:       - Codec CPU usage (min/avg/max): 26%/29%/32%
+@endcode
+
+Audio gauges show audio frame and buffer statistics, bit rate information, and audio subsystem load (also referred to as "CPU usage" or "CPU load") of each audio processing stage, as well as of the audio subsystem as a whole.
+The CPU usage is calculated as a relation of an audio frame's duration to the time that the CPU needs to process this frame.
+For example, if a frame holds 20 ms of audio data but processing of it takes 30 ms, the CPU load will be indicated as 150%.
+If CPU load over 100% persists for a longer period of time, the buffer pool will be depleted and it will no longer be possible
+to compensate latency using them. Audio data is lost in such case. Short periods of CPU load over 100% are tolerated and can be compensated,
+as long as there are buffers in the buffer pool.
+
+@section audio_cli Audio CLI commands
+
+Statistics gathered by Audio Gauges, in greater detail and augmented by memory usage information, can be also viewed in real time using
+dedicated inspection commands through the command line interface:
+@code
+SR3-RTT> audio info
+Configuration:
+        Sampling Frequency:     16125 Hz
+        Frame Length:           19.84 ms (320 samples, up to 102 bytes/frame = 41 kbit/s)
+
+Status: Enabled
+        Capture time:           3:07
+        Frame loss ratio:       0% (0 out of 9452 frames)
+        Bit rate:               18 kbit/s (min/avg/max: 15/18/26 kbit/s)
+
+        CPU Usage:              58% (min/avg/max: 52%/58%/66%)
+            - ANR:              27% (min/avg/max: 23%/27%/33%)
+            - Codec:            29% (min/avg/max: 26%/29%/39%)
+
+        Buffer Pool Usage:      50% (2 out of 4 buffers)
+            - Maximum:          75% (3 out of 4 buffers)
+
+        Frame Pool Usage:       0% (0 out of 6 frames)
+            - Maximum:          16% (1 out of 6 frames)
+@endcode
+
+The commands might be also used to dynamically alter the configuration of the audio subsystem.
+The following commands are supported:
+
+- <tt>audio driver info</tt><br>
+  Prints information about the configuration and state of the audio capture driver.
+
+- <tt>audio driver set gain \<gain\></tt><br>
+  <tt>audio driver set gain \<L-gain\> \<R-gain></tt><br>
+  Allows to set decimator gain. Gain is specified in dB and ranges from -20 dB to +20 dB.
+
+- <tt>audio info</tt><br>
+  Prints information about the configuration and state of the audio processing module.
+
+- <tt>audio codec info</tt><br>
+  Prints information about codec configuration.
+
+- <tt>audio codec set complexity \<0-10\></tt><br>
+  Allows to set Opus codec complexity level. This command is available only when Opus codec is used.
+
+- <tt>audio codec set bitrate auto</tt><br>
+  <tt>audio codec set bitrate \<bitrate\> [vbr|cbr]</tt><br>
+  Allows to set bit rate (specified in kbit/s), as well as bit rate control scheme. Note that actual bit rate never exceeds the limit set by the @ref CONFIG_OPUS_BITRATE_LIMIT option.
+  This command is available only when Opus codec is used.
+
+*/

@@ -1,0 +1,41 @@
+/**
+@page ble_connection BLE connection management
+
+Once a <em>Bluetooth</em> connection is established, Smart Remote performs several actions in order to
+ensure secure and reliable operation.
+
+@section ble_conn_security Connection security
+
+In order to provide satisfactory level of security, the HID service is allowed to send data only over an encrypted link.
+As a result, link encryption must be performed as soon as possible in order to enable data flow.
+
+Because Smart Remote is a <em>Bluetooth</em> peripheral device, it cannot enforce link security. After a connection from a bonded host, the remote
+waits for @ref CONFIG_ENC_REQ_DELAY miliseconds for an encryption request sent from the host. If during that time a link encryption
+procedure is not initiated, the remote sends its own request. If a secure link cannot be established, the remote
+disconnects and either starts advertising (if there is no bond stored or power management is disabled) or triggers a shutdown procedure.
+
+@section ble_conn_parameters Connection parameters negotiation
+
+Smart Remote implements <em>Bluetooth</em> connection parameters negotiation in order to obtain the most efficient link configuration.
+If the host chooses parameters different than the ones set in the Smart Remote configuration file (@ref CONFIG_MIN_CONN_INTERVAL_MS,
+@ref CONFIG_MAX_CONN_INTERVAL_MS, @ref CONFIG_SLAVE_LATENCY, and @ref CONFIG_CONN_SUP_TIMEOUT_MS), the remote tries to renegotiate them.
+In such case, the first connection parameter update request is sent @ref CONFIG_FIRST_CONN_PARAMS_UPDATE_DELAY miliseconds
+after establishing the connection. If the negotiation is not successful, or the negotiated parameters are outside of the configured range,
+the remote waits @ref CONFIG_NEXT_CONN_PARAMS_UPDATE_DELAY seconds and sends another connection parameter update request.
+The process repeats up to @ref CONFIG_MAX_CONN_PARAMS_UPDATE_COUNT times unless satisfactory parameters are negotiated.
+
+@section ble_conn_phy_negotiation PHY negotiation
+
+Smart Remote supports both 1 Mbit/s and 2 Mbit/s PHYs (accordingly with <em>Bluetooth</em> 5.0 specification). By default, the remote answers on PHY update request
+and advertises support for both rates. The fastest PHY supported by both the host and the remote is then used. The remote can
+also initiate PHY negotiation if @ref CONFIG_PHY_SEND_UPDATE_REQUEST option is set to 1. List of the available PHYs can be altered
+by respective options (@ref CONFIG_PHY_TX_1MBPS, @ref CONFIG_PHY_TX_2MBPS, @ref CONFIG_PHY_RX_1MBPS, @ref CONFIG_PHY_RX_2MBPS).
+
+@section ble_conn_slave_latency_mgmt Slave latency management
+
+In order to make negotiations described above as fast as possible, the remote temporarily disables slave latency.
+It is enabled back when link security is established (in case of connection with bonded host), or when
+all HID characteristics are enabled (in case of a first connection with the given host). Such approach minimizes the
+time needed to set up the <em>Bluetooth</em> link, allowing for fast bonding and reconnection.
+
+*/

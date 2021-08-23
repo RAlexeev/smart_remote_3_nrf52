@@ -1,0 +1,85 @@
+/**
+@page hid_subsystem HID state subsystem
+
+The primary function of Smart Remote is to reliably collect the
+information about user input and transmit it to the host. The main difficulty arises from the fact that
+due to a limited power budget, the device spends most of its time in low power mode,
+in which it is not connected to the host. When the user presses a button, the device
+must wake up, connect to the host, and transmit the information about the button press
+up the link.
+
+HID state subsystem is responsible for tracking the device connection state
+and properly routing input events, either to the BLE communication subsystem
+or to the event queue.
+
+HID events can be divided into two main categories:
+- absolute value events (such as buttons),
+- relative value events (such as pointer movement coordinates).
+
+Depending on the category, HID state subsystem treats events differently. The matrix below
+presents this behavior.
+
+| Input Event Category \ BLE Connection State | Disconnected | Connected                                   |
+| :---:                                       | :---:        | :---:                                       |
+| Absolute                                    | enqueue      | if (queue_is_not_empty)<br>enqueue<br>else<br>trasmit|
+| Relative                                    | drop         | transmit                                    |
+
+@section hid_event_queue HID event queue
+
+When the device is disconnected and an incoming input event cannot be dropped,
+the event is passed to the HID event queue. The number of the elements in the
+queue is limited by @ref CONFIG_PROTOCOL_HID_EVENT_QUEUE_SIZE. The events are
+automatically discarded after @ref CONFIG_HID_REPORT_EXPIRATION milliseconds.
+When this happens, the following warning message is logged (where \%u is substituted
+with the number of events that were discarded).
+
+@code <warning> m_protocol_hid_state: m_protocol_hid_state_eventq_cleanup(): WARNING: %u stale events removed from the queue! @endcode
+
+It is important that the order in which events are enqueued is maintained. For this
+reason, an expired event cannot be discarded if any of the events prior to it is
+not discarded as well. To maintain state sanity, a button down event can only
+be discarded when a matching button up event is discarded as well. If there is no
+place in the queue to store an incoming event, the HID state subsystem tries
+to discard the oldest event in the queue.
+
+The above rules are matched in a general case when keys are pressed and released
+in a sequence one after another. In this case, the oldest key press and release is
+discarded, and a new event is stored. When no events are generated and no
+connection is established, events are discarded after the expiration time
+defined above.
+However, if the user presses and holds the button, while simultaneously generating
+a sequence of other button events, the queue cannot discard events and an overflow
+happens. To maintain state sanity, all events are dropped in such case.
+The following warning message is logged.
+
+@code <warning> m_protocol_hid_state: m_protocol_hid_state_enqueue(): WARNING: Queue is full, all events are dropped! @endcode
+
+@section hid_event_item HID event items
+
+When the device is connected, all incoming events are scheduled for transmission.
+This is done through an update of an entry in the event item list and notification
+sent to the BLE communication subsystem. When the BLE communication subsystem
+is ready for HID events transmission, it obtains the information about elements
+present on the event item list, and for each element it constructs a proper entry
+in the HID report. Elements on the list are present as long as there is any information
+that causes the report entry to be generated (for example, a button is pressed or mouse position
+coordinates are updated). When the value associated with the event drops to zero
+(which means, the button is released or there is no mouse movement), the item is discarded from
+the list.
+
+@note Just after the connection is established, all elements present in the event
+queue are sequentially transmitted to the host. If, during that time, 
+a new input event is generated (and it is an absolute value event), it is enqueued
+to maintain the correct sequence of input events. In case there is no space in the
+queue and no event can be discarded, the queue is dropped and event item list is
+cleared. This action is performed to ensure sanity of the HID state.
+
+The number of items that are recorded by HID state subsystem is configured with
+@ref CONFIG_PROTOCOL_HID_STATE_ITEM_COUNT. In case input modules generate more
+active events at the same time (for example, the keyboard module issues information about
+more keys being pressed than there are available elements in the list), the incoming
+event is discarded and the following message is logged.
+
+@code <warning> m_protocol_hid_state: m_protocol_hid_state_set_value(): WARNING: no place on the list to store HID item! @endcode
+
+*/

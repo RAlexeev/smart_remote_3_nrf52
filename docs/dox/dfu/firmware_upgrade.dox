@@ -1,0 +1,24 @@
+/**
+@page firmware_upgrade Firmware upgrade via cable connection
+
+This firmware upgrade scenario involves uploading the SoftDevice and the application onto the board using a cable connection.
+Optionally, you can also flash the bootloader and its settings. The precompiled files provided with Smart Remote that can
+be used for this procedure integrate the SoftDevice, the application, the bootloader, and the bootloader settings.
+
+The Smart Remote firmware can be upgraded by using <a href="http://www.nordicsemi.com/eng/Products/2.4GHz-RF/nRFgo-Studio/" target="blank">nRFgo&trade; Studio</a>.
+
+To upgrade the firmware with nRFgo Studio, follow these steps:
+
+-# Start nRFgo Studio.
+-# Connect your board to the host.
+-# Select <strong>nRF52 development boards</strong>, as shown in the figure below.
+-# Select the <strong>Program Application</strong> tab.
+-# Click <strong>Browse</strong> to locate the application HEX file that you want to program. It can be found in:
+ @code 
+ <installation_path>\nRFready Smart Remote 3 nRF52 v1.2\Precompiled Firmware\
+ @endcode The default installation path is @code C:\Nordic Semiconductor\ @endcode
+-# Click <strong>Program</strong>.
+
+@image html Firmware_Download.png "Application programming in nRFgo Studio"
+
+*/

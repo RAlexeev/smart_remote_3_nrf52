@@ -1,0 +1,24 @@
+/**
+@page clocking_options Clocking options
+
+The nRF52 family offers flexible <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.nrf52832.ps.v1.1/clock.html#frontpage_clock" target="_blank">clocking options</a>,
+allowing the system integrator to balance device cost, power consumption, and system complexity.
+
+The Smart Remote firmware follows the same paradigm supporting two different low frequency clock sources, which can be selected through a set of defines in the <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/sdk_config.html" target="_blank">SDK configuration header file</a>.
+
+@section clocking_lfxo 32.768 kHz crystal oscillator (LFXO)
+
+Using crystal oscillator as a low frequency clock source offers the lowest power consumption, which is inversely proportional to the oscillator accuracy.
+However, this oscillator has a long startup time, which negatively impacts Smart Remote wakeup latency. It also increases the device BOM cost and system complexity as external components must be connected to the nRF52 SoC.
+
+In order to use the LFXO, both the @c CLOCK_CONFIG_LF_SRC and @c NRF_SDH_CLOCK_LF_SRC options must be set to 1. Additionally, the @c NRF_SDH_CLOCK_LF_XTAL_ACCURACY must be adjusted to reflect the crystal accuracy.
+Note that LFXO using 20 ppm crystal is the default clock configuration in the firmware.
+
+@section clocking_lfrc 32.768 kHz RC oscillator (LFRC)
+
+The RC oscillator offers the lowest possible startup time at the cost of slightly increased power consumption. As it does not require external components, it also reduces system complexity, frees 2 GPIOs for the application, and lowers the device BOM cost.
+
+In order to use the LFRC, both the @c CLOCK_CONFIG_LF_SRC and @c NRF_SDH_CLOCK_LF_SRC options must be set to 0. Additionally, the oscillator calibration intervals (@c NRF_SDH_CLOCK_LF_RC_CTIV and @c NRF_SDH_CLOCK_LF_RC_TEMP_CTIV)
+must be tuned to match the expected operating conditions. For details about calibration settings, consult <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.s132.sds/dita/softdevices/s130/sd_mgr/sd_mgr_clock_src.html" target="_blank">SoftDevice Specification</a>.
+
+*/

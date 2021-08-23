@@ -1,0 +1,29 @@
+/**
+@page packet_scheduling Packet scheduling
+
+Smart Remote implements a data packet scheduling mechanism to streamline data transmission performance. The communication module divides all egress data into four categories. Each of these categories contains a different kind of data with different bandwidth and latency requirements:
+
+- Audio packets
+	
+	Audio stream requires a significant part of the <em>Bluetooth</em> link bandwidth. Latency is not critical as long as it is kept at the same level to avoid jitter.
+
+- Keyboard reports
+	
+	Keyboard data does not take much of the <em>Bluetooth</em> link bandwidth, since keyboard state changes are relatively rare. The latency must be kept low.
+
+- X/Y motion reports
+	
+	Motion generates a lot of data that has a unique feature - it can be accumulated by summing up motion vectors. Accumulation reduces bandwidth requirements. Still, low latency is critical.
+
+- Wheel/Pan motion reports
+	
+	The Wheel/Pan motion has the same features like X/Y motion, however it generates smaller amounts of data. Latency requirements are not so strict either.
+
+@image html packet_scheduling.svg "Packet scheduling mechanism"
+
+Every time when a new packet can be sent over the <em>Bluetooth</em> link, the communication module chooses the data stream to be serviced. This is realized by repetitively iterating over the list of all services until the SoftDevice transmission queue is full or there is no more data to send. Every time the given service is checked, it is allowed to send only one packet.
+
+Services that require lower latency or higher bandwidth are instantiated multiple times on the list.
+For example, X/Y motion is placed in between all other services to assure that the latency stays low. As a result, it is checked often. However, since motion values can be accumulated, the packet rate is kept low to leave more bandwidth available for other services.
+
+*/

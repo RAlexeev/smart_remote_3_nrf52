@@ -1,0 +1,23 @@
+/**
+@mainpage Introduction
+
+Welcome to the firmware documentation for nRFready&trade; Smart Remote 3 nRF52 v1.2.
+
+This document consists of the following sections:
+
+- @ref getting_started        "Getting started" - Basic information and description of the first steps when working with this firmware.
+- @ref firmware_architecture  "Firmware architecture" - Detailed explanation of different aspects of the firmware architecture.
+- @ref upgrade_scenarios      "Firmware upgrade scenarios" - Upgrade scenarios, including Over-the-Air Device Firmware Update (OTA-DFU).
+- @ref host_tools             "Host tools" - Applications for developing and debugging Smart Remote.
+- @ref RELEASE_NOTES          "Release notes" - Release notes and firmware changelog.
+
+<strong>Related documentation:</strong>
+
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.rds/dita/rds/designs/smart_remote/smart_remote_3_nrf52/intro/frontpage.html" target="blank">Smart Remote 3 for nRF52 User Guide v2.0</a>
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/index.html" target="blank">nRF5 SDK v14.2.0 documentation</a>
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.nrf52/dita/nrf52/development/nrf52_dev_kit.html" target="blank">nRF52832 Development Kit documentation</a>
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.nrf52/dita/nrf52/development/nrf52810_dev_kit.html" target="blank">nRF52810 Development Kit documentation</a>
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.nrf52/dita/nrf52/chips/nrf52832_ps.html" target="blank">nRF52832 Product Specification document</a>
+- <a href="http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.nrf52/dita/nrf52/chips/nrf52810_ps.html" target="blank">nRF52810 Product Specification document</a>
+
+*/
