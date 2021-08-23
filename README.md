@@ -1,0 +1,1 @@
+[Smart Remote 3 for nRF52 Firmware v1.2 Documentation](https://ralexeev.github.io/smart_remote_3_nrf52/)
